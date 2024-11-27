@@ -25,16 +25,6 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 │   ├── annotations/           # Detailed vehicle annotations
 │   └── 
 │
-├── models/
-│   ├── detection/             # Vehicle detection models
-│   │   ├── yolo/
-│   │   ├── faster_rcnn/
-│   │   └── ssd/
-│   ├── tracking/              # Multi-object tracking algorithms
-│   │   ├── sort/
-│   │   └── deep_sort/
-│   └── classification/        # Vehicle type classification
-│
 ├── scripts/
 │   ├── preprocessing.py       # Data preprocessing pipeline
 │   ├── train.py               # Model training script
@@ -43,7 +33,6 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 │
 ├── notebooks/
 │   ├── data_exploration.ipynb
-│   ├── model_development.ipynb
 │   └── performance_analysis.ipynb
 │
 ├── requirements.txt
