@@ -1,8 +1,47 @@
 # The-DRIFT
 
-## Key Features
+## 🚀 Project Overview
+The DRIFT is comprehensive open-source research project focusing on advanced vehicle detection, tracking, and traffic pattern analysis using high-resolution drone imagery across diverse urban and rural environments.
 
-다양한 도로 환경에서 수집된 고해상도 드론 영상 데이터셋
-차량 탐지 및 트래킹을 위한 딥러닝 모델
-교통 흐름 및 혼잡도 분석 알고리즘
-시각화 및 성능 평가 도구
+
+## 📊 Key Research Contributions
+
+- Large-scale drone-captured vehicle detection dataset
+- Advanced deep learning models for real-time vehicle tracking
+- Comprehensive traffic flow and congestion analysis algorithms
+
+## 🔬 Research Objectives
+
+## 🗂️ Repository Structure
+
+DroneTrack/
+│
+├── datasets/
+│   ├── raw/                   # Original drone footage
+│   ├── annotations/           # Detailed vehicle annotations
+│   └── processed/             # Preprocessed and normalized data
+│
+├── models/
+│   ├── detection/             # Vehicle detection models
+│   │   ├── yolo/
+│   │   ├── faster_rcnn/
+│   │   └── ssd/
+│   ├── tracking/              # Multi-object tracking algorithms
+│   │   ├── sort/
+│   │   └── deep_sort/
+│   └── classification/        # Vehicle type classification
+│
+├── scripts/
+│   ├── preprocessing.py       # Data preprocessing pipeline
+│   ├── train.py               # Model training script
+│   ├── evaluate.py            # Performance evaluation
+│   └── visualization.py       # Results visualization
+│
+├── notebooks/
+│   ├── data_exploration.ipynb
+│   ├── model_development.ipynb
+│   └── performance_analysis.ipynb
+│
+├── requirements.txt
+├── README.md
+└── LICENSE
