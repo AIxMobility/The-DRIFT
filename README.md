@@ -48,7 +48,7 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 ## 🚀 Quick Start 
 ```python
 # Clone the repository
-git clone https://github.com/[username]/DroneTrack
+git clone https://github.com/AIxMobility/The-DRIFT
 
 # Install dependencies
 pip install -r requirements.txt
