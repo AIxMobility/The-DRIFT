@@ -6,20 +6,20 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 
 ## 📊 Key Research Contributions
 
-- Large-scale drone-captured vehicle detection dataset
-- Advanced deep learning models for real-time vehicle tracking
-- Comprehensive traffic flow and congestion analysis algorithms
+* Large-scale drone-captured vehicle detection dataset
+* Advanced deep learning models for real-time vehicle tracking
+* Comprehensive traffic flow and congestion analysis algorithms
 
 ## 🔬 Research Objectives
 
-## 🗂️ Repository Structure
+## 🗂️ Repository Structure (Sample)
 
-DroneTrack/
+```DroneTrack/
 │
 ├── datasets/
 │   ├── raw/                   # Original drone footage
 │   ├── annotations/           # Detailed vehicle annotations
-│   └── processed/             # Preprocessed and normalized data
+│   └── 
 │
 ├── models/
 │   ├── detection/             # Vehicle detection models
@@ -45,3 +45,4 @@ DroneTrack/
 ├── requirements.txt
 ├── README.md
 └── LICENSE
+```
