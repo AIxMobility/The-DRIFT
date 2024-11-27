@@ -55,7 +55,7 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 
 
 ## 🚀 Quick Start 
-'''python
+```python
 # Clone the repository
 git clone https://github.com/[username]/DroneTrack
 
@@ -67,7 +67,7 @@ python scripts/preprocessing.py
 
 # Train detection model
 python scripts/train.py
-'''
+```
 
 
 
