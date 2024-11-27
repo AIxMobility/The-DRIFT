@@ -52,6 +52,8 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 ```
 
 ## 📈 Performance Metrics
+* Mean Average Precision (mAP)
+* Intersection over Union (IoU)
 
 
 ## 🚀 Quick Start 
