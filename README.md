@@ -31,7 +31,7 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 │
 ├── extraction/                # Data extraction and stabilization
 │   ├── preprocessing/         # Scripts for data preprocessing
-│   │   ├── detect-and-track.py
+│   │   ├── detect_and_track.py
 │   │   ├── json_to_csv.py             
 │   │   ├── lane.py
 │   │   ├── RoI.json
@@ -50,6 +50,7 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 |
 ├── utils/                     # Utility scripts for data handling
 │   ├── convert.py
+│   ├── video_to_frame.py
 │
 ├── vis/                       # Visualization scripts and tools
 │
