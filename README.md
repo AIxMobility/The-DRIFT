@@ -15,6 +15,10 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 * Provide open-source tools for urban mobility research
 
 ## 📦 Dataset Specifications
+* Site information
+* Recorded video information
+* Provided dataset information
+* Used model information
 
 ## 🗂️ Repository Structure (Sample)
 
@@ -40,9 +44,8 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 └── LICENSE
 ```
 
-## 📈 Performance Metrics
-* Mean Average Precision (mAP)
-* Intersection over Union (IoU)
+## 📈 Utilized Tools fot Traffic Analysis
+* for KAIST
 
 
 ## 🚀 Quick Start 
@@ -54,10 +57,13 @@ git clone https://github.com/AIxMobility/The-DRIFT
 pip install -r requirements.txt
 
 # Preprocess dataset
-python scripts/preprocessing.py
+sh ./extraction/preprocessing/run.sh
+
+# Stabilization video
+sh ./extraction/stabilo/run.sh
 
 # Train detection model
-python scripts/train.py
+python model/train.py
 ```
 
 
