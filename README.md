@@ -24,24 +24,42 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 
 ```DroneTrack/
 │
-├── datasets/
-│   ├── raw/                   # Original drone footage
-│   ├── annotations/           # Detailed vehicle annotations
-│   └── 
+├── data/
+│   ├── csv/                   # Original drone footage
+│   ├── sample_video/           # Detailed vehicle annotations
+│   ├── site_images/
 │
-├── scripts/
-│   ├── preprocessing.py       # Data preprocessing pipeline
-│   ├── train.py               # Model training script
-│   ├── evaluate.py            # Performance evaluation
-│   └── visualization.py       # Results visualization
+├── extraction/
+│   ├── preprocessing/          # Data preprocessing pipeline
+│   │   ├── detect-and-track.py
+│   │   ├── json_to_csv.py             # Lane processing script
+│   │   ├── lane.py
+│   │   ├── RoI.json
+│   │   ├── run.sh
+│   ├── stabilo/                
+│   │   ├── run.sh
+|
+├── model/
+│   ├── test/                   
+│   ├── train/           
+│   ├── valid/
+│   ├── data.yaml                   
+│   ├── drone_data.yaml           
+│   ├── train.py
+|
+├── utils/
+│   ├── convert.py
+│
+├── viz/
 │
 ├── notebooks/
 │   ├── data_exploration.ipynb
-│   └── performance_analysis.ipynb
+│   ├── performance_analysis.ipynb
 │
 ├── requirements.txt
 ├── README.md
 └── LICENSE
+
 ```
 
 ## 📈 Utilized Tools fot Traffic Analysis
