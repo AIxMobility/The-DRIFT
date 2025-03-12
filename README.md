@@ -46,11 +46,12 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 │   ├── data.yaml                   
 │   ├── drone_data.yaml           
 │   ├── train.py
+│   ├── best.pt
 |
 ├── utils/                     # Utility scripts for data handling
 │   ├── convert.py
 │
-├── viz/                       # Visualization scripts and tools
+├── vis/                       # Visualization scripts and tools
 │
 ├── notebooks/
 │   ├── data_exploration.ipynb
