@@ -24,22 +24,22 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 
 ```DroneTrack/
 │
-├── data/
-│   ├── csv/                   # Original drone footage
-│   ├── sample_video/           # Detailed vehicle annotations
-│   ├── site_images/
+├── data/                      # Raw and processed drone data
+│   ├── csv/                   # Drone footage metadata
+│   ├── sample_video/          # Sample drone videos
+│   ├── site_images/           # Site-specific images from drone footage
 │
-├── extraction/
-│   ├── preprocessing/          # Data preprocessing pipeline
+├── extraction/                # Data extraction and stabilization
+│   ├── preprocessing/         # Scripts for data preprocessing
 │   │   ├── detect-and-track.py
-│   │   ├── json_to_csv.py             # Lane processing script
+│   │   ├── json_to_csv.py             
 │   │   ├── lane.py
 │   │   ├── RoI.json
 │   │   ├── run.sh
-│   ├── stabilo/                
+│   ├── stabilo/               # Stabilization-related scripts
 │   │   ├── run.sh
 |
-├── model/
+├── model/                     # Annotation data and model training
 │   ├── test/                   
 │   ├── train/           
 │   ├── valid/
@@ -47,10 +47,10 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 │   ├── drone_data.yaml           
 │   ├── train.py
 |
-├── utils/
+├── utils/                     # Utility scripts for data handling
 │   ├── convert.py
 │
-├── viz/
+├── viz/                       # Visualization scripts and tools
 │
 ├── notebooks/
 │   ├── data_exploration.ipynb
