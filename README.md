@@ -77,10 +77,10 @@ git clone https://github.com/AIxMobility/The-DRIFT
 pip install -r requirements.txt
 
 # Preprocess dataset
-sh ./extraction/preprocessing/run.sh
+sh extraction/preprocessing/run.sh
 
 # Stabilization video
-sh ./extraction/stabilo/run.sh
+sh extraction/stabilo/run.sh
 
 # Train detection model
 python model/train.py
