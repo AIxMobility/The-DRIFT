@@ -85,6 +85,7 @@ sh extraction/stabilo/run.sh
 # Train detection model
 python model/train.py
 ```
-
+## Acknowledgement
+* https://github.com/rfonod/stabilo
 
 
