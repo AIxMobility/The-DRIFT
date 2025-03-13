@@ -1,0 +1,8 @@
+names:
+- bus
+- car
+- truck
+nc: 3
+test: ./model/test/images/
+train: ./model/train/images
+val: ./model/valid/images/
