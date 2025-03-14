@@ -1,4 +1,4 @@
-# The-DRIFT
+# The DRIFT Open Dataset
 
 ## 🚀 Project Overview
 The DRIFT is comprehensive open-source research project focusing on advanced vehicle detection, tracking, and traffic pattern analysis using high-resolution drone imagery across diverse urban and rural environments.
@@ -88,4 +88,9 @@ python model/train.py
 ## Acknowledgement
 * https://github.com/rfonod/stabilo
 
+## Citing This Work
+If you use this project in your academic research, commercial products, or any published material, please acknowledge its use by citing it.
+```
+?
+```
 
