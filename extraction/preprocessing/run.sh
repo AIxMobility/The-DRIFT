@@ -15,8 +15,3 @@ python lane.py \
     --input "./data/output/test_csv" \
     --output "./data/output/processed_csv" \
     --roi "./extraction/preprocessing/roi.json"
-
-# csv to json-xml
-# python csv_to_json-xml.py \
-#     --input "./output/processed_csv" \
-#     --format "json"
