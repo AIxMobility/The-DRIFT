@@ -22,22 +22,6 @@
 
 ```
 
-### 🔬 Research Objectives (Sample)
-* Provide a standardized, annotated drone dataset for traffic analysis
-* Provide open-source tools for urban mobility research
-
-## 📦 Dataset Specifications
-* Site information
-* Recorded video information
-* Provided dataset information
-* Used model information
-
-
-
-## 📈 Utilized Tools fot Traffic Analysis
-* for KAIST
-
-
 ## 🚀 Quick Start 
 ```python
 # Clone the repository
