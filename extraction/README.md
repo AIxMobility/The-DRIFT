@@ -1,7 +1,4 @@
-
-# Extraction
-
-## 🗂️ Additional Files
+# 🗂️ Additional Files
 - geoalign
 - preprocessing             
 - stabilo
