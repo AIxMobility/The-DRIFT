@@ -8,3 +8,15 @@
 - `roi.json` : A json file containing the roi for each site-specific lane, used by `lane.py`.
 
 - `run.sh` : Defined to run all of the preprocessing, and can be commented out as needed to run only the necessary files. 
+
+
+## Commands Used
+1. Run all processes at once :
+-    
+2. Run only `detect_and_track.py` :
+-      
+3. Run only `json_to_csv.py` :
+-    
+4. Run only `lane.py` :
+- 
+
