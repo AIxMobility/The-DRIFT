@@ -1,9 +1,9 @@
 # 🗂️ Extraction
-- geoalign : Guaranteed frame alignment when traditional feature-based matching fails
+- `geoalign` : Guaranteed frame alignment when traditional feature-based matching fails
  
-- preprocessing : Data processing to create a DRIFT dataset             
+- `preprocessing` : Data processing to create a DRIFT dataset             
 
-- stabilo : Video stabilisation with feature-based matching
+- `stabilo` : Video stabilisation with feature-based matching
 
 ## Repository Structure
 ```DroneTrack/
