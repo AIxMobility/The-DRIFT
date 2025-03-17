@@ -22,7 +22,8 @@ sh run.sh
 ```python
 python detect_and_track.py
  --model <Your Model Path> \
- --input <Input Video Path> output <Output Path>
+ --input <Input Video Path> \
+ --output <Output Path>
 ```
 ```python
 # After commenting out lines 7 to 17
