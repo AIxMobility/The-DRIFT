@@ -1,4 +1,4 @@
-# 🗂️ Additional Files
+# 🗂️ Extraction
 - geoalign : Guaranteed frame alignment when traditional feature-based matching fails
  
 - preprocessing : Data processing to create a DRIFT dataset             
