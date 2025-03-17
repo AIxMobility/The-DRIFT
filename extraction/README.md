@@ -1,9 +1,9 @@
 # 🗂️ Additional Files
-- geoalign
+- geoalign : Guaranteed frame alignment when traditional feature-based matching fails
  
-- preprocessing             
+- preprocessing : Data processing to create a DRIFT dataset             
 
-- stabilo
+- stabilo : Video stabilisation with feature-based matching
 
 ```DroneTrack/
 ├── extraction/                # Data extraction and stabilization
