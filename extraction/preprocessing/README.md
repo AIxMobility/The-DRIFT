@@ -16,22 +16,31 @@
 - Set the output of `json_to_csv.py` and the input of `lane.py` to be the same
 ```python
 sh run.sh
-```    
-2. Run only `detect_and_track.py` :
-- After commenting out lines 7 to 17
+```
+
+2. Run only `detect_and_track.py` : Choose between two methods
 ```python
 python detect_and_track.py
  --model <Your Model Path> \
  --input <Input Video Path> output <Output Path>
-```       
-3. Run only `json_to_csv.py` :
-- After commenting out lines 1 to 5 and 12 to 17
+```
+```python
+# After commenting out lines 7 to 17
+sh run.sh
+```
+  
+3. Run only `json_to_csv.py` : Choose between two methods
 ```python
 python json_to_csv.py
  --json_dir <Your Json File Path> \
  --output <Output Path>
-```      
-4. Run only `lane.py` :
+```
+```python
+# After commenting out lines 1 to 5 and 12 to 17
+sh run.sh
+```
+      
+4. Run only `lane.py` : Choose between two methods
 ```python
 python lane.py
  --site <Site corresponding to the dataset>
@@ -39,8 +48,7 @@ python lane.py
  --output <Output Path>
  --roi <Path to the Json file containing the ROI information>
 ```
-or
-- After commenting out lines 1 to 10
 ```python
+# After commenting out lines 1 to 10
 sh run.sh
 ``` 
