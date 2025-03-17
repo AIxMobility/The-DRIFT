@@ -13,7 +13,7 @@
 ## Commands Used
 1. Run all processes at once :
 ```python
-# The output of detect_and_track and the input of json_to_csv, Set output from json_to_csv and input from lane.py to be the same
+# Set the output of `detect_and_track.py` and the input of `json_to_csv.py` to be the same
 sh run.sh
 ```    
 2. Run only `detect_and_track.py` :
