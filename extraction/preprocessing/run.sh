@@ -1,5 +1,5 @@
 # trajectory extraction
-python detect-and-track.py \
+python detect_and_track.py \
     --model './model/YOLO11OBBm.pt' \
     --input './data/sample_video/DJI_0008_cut_stab.mp4' \
     --output './data/output/test_json'
