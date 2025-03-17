@@ -1,8 +1,11 @@
 
 # Extraction
 
-## 🗂️ Repository Structure
-
+## 🗂️ Additional Files
+│   │   ├── detect_and_track.py
+│   │   ├── json_to_csv.py             
+│   │   ├── lane.py
+│   │   ├── roi.json
 ```DroneTrack/
 ├── extraction/                # Data extraction and stabilization
 │   ├── geoalign/
