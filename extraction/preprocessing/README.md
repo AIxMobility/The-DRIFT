@@ -12,8 +12,8 @@
 
 ## Commands Used
 1. Run all processes at once :
-```python
 # Set the output of `detect_and_track.py` and the input of `json_to_csv.py` to be the same
+```python
 sh run.sh
 ```    
 2. Run only `detect_and_track.py` :
