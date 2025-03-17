@@ -43,9 +43,9 @@ sh run.sh
 4. Run only `lane.py` : Choose between two methods
 ```python
 python lane.py
- --site <Site corresponding to the dataset>
- --input <CSV File Path>
- --output <Output Path>
+ --site <Site corresponding to the dataset> \
+ --input <CSV File Path> \
+ --output <Output Path> \
  --roi <Path to the Json file containing the ROI information>
 ```
 ```python
