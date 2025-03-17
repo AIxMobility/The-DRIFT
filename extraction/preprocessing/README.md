@@ -12,11 +12,22 @@
 
 ## Commands Used
 1. Run all processes at once :
--    
+```python
+sh run.sh
+```    
 2. Run only `detect_and_track.py` :
--      
+```python
+# After commenting out lines 7 to 17
+sh run.sh
+```       
 3. Run only `json_to_csv.py` :
--    
+```python
+# After commenting out lines 1 to 5 and 12 to 17
+sh run.sh
+```      
 4. Run only `lane.py` :
-- 
+```python
+# After commenting out lines 1 to 10
+sh run.sh
+```  
 
