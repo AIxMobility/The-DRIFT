@@ -4,7 +4,6 @@
 ## 🗂️ Repository Structure
 
 ```DroneTrack/
-
 ├── extraction/                # Data extraction and stabilization
 │   ├── geoalign/
 │   │   ├── geoalign_roi.json
@@ -19,7 +18,6 @@
 │   │
 │   ├── stabilo/               # Stabilization-related scripts
 │   │   ├── run.sh
-
 ```
 
 ## 🚀 Quick Start 
