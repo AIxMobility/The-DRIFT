@@ -20,17 +20,27 @@ sh run.sh
 2. Run only `detect_and_track.py` :
 - After commenting out lines 7 to 17
 ```python
-sh run.sh model <Your Model Path> input <Input Video Path> output <Output Path>
+python detect_and_track.py
+ --model <Your Model Path> \
+ --input <Input Video Path> output <Output Path>
 ```       
 3. Run only `json_to_csv.py` :
 - After commenting out lines 1 to 5 and 12 to 17
 ```python
-sh run.sh \
-json_dir <Your Json File Path> output <Output Path>
+python json_to_csv.py
+ --json_dir <Your Json File Path> \
+ --output <Output Path>
 ```      
 4. Run only `lane.py` :
+```python
+python lane.py
+ --site <Site corresponding to the dataset>
+ --input <CSV File Path>
+ --output <Output Path>
+ --roi <Path to the Json file containing the ROI information>
+```
+or
 - After commenting out lines 1 to 10
 ```python
-sh run.sh site <Site corresponding to the dataset>
-```  
-
+sh run.sh
+``` 
