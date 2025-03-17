@@ -5,6 +5,7 @@
 
 - stabilo : Video stabilisation with feature-based matching
 
+## Repository Structure
 ```DroneTrack/
 ├── extraction/                # Data extraction and stabilization
 │   ├── geoalign/
