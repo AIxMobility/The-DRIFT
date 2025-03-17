@@ -2,10 +2,10 @@
 # Extraction
 
 ## 🗂️ Additional Files
--  detect_and_track.py
-- json_to_csv.py             
-- lane.py
-- roi.json
+- geoalign
+- preprocessing             
+- stabilo
+
 ```DroneTrack/
 ├── extraction/                # Data extraction and stabilization
 │   ├── geoalign/
@@ -21,22 +21,4 @@
 │   │
 │   ├── stabilo/               # Stabilization-related scripts
 │   │   ├── run.sh
-```
-
-## 🚀 Quick Start 
-```python
-# Clone the repository
-git clone https://github.com/AIxMobility/The-DRIFT
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Preprocess dataset
-sh extraction/preprocessing/run.sh
-
-# Stabilization video
-sh extraction/stabilo/run.sh
-
-# Train detection model
-python model/train.py
 ```
