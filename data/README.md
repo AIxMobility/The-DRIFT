@@ -1,5 +1,8 @@
-# Data Description
+# 🗂️ Data Description
 
-- `sample_video` :  Contains example video data for SITE B.
+- `csv` :  .
 
-- `site_images` : Contains representative images for each SITE.
+- `sample_video` :  Contains example video data.
+
+- `site_images` : Contains representative images for each site.
+
