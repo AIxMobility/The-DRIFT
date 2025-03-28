@@ -72,6 +72,10 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 <img src="https://github.com/user-attachments/assets/d5a27d9d-7cd6-44af-9546-cd8a2d09eee8" width="400" height="500"/>
 <img src="https://github.com/user-attachments/assets/90882ec6-b9fb-4c97-b0fa-ea978237cb00" width="400" height="500"/>
 
+
+<img src="https://github.com/user-attachments/assets/b58860be-1916-49a1-ae5d-4f229b5b4bff" width="400" height="500"/>
+
+
 ### Flow_density
 <img src="https://github.com/user-attachments/assets/1d843b40-4a0e-482b-a080-86fe629dc148" width="1000" height="400"/>
 
