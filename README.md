@@ -64,11 +64,10 @@ The DRIFT is comprehensive open-source research project focusing on advanced veh
 ```
 
 ## 🔍 Visualization
-<img src="https://github.com/user-attachments/assets/d85fb5f4-2bb0-4b6a-a5b8-4ff49b5a2849" width="200" height="400"/>
-
-![Image](https://github.com/user-attachments/assets/90882ec6-b9fb-4c97-b0fa-ea978237cb00)
-![Image](https://github.com/user-attachments/assets/1d843b40-4a0e-482b-a080-86fe629dc148)
-![Image](https://github.com/user-attachments/assets/d5a27d9d-7cd6-44af-9546-cd8a2d09eee8)
+<img src="https://github.com/user-attachments/assets/d85fb5f4-2bb0-4b6a-a5b8-4ff49b5a2849" width="400" height="200"/>
+<img src="https://github.com/user-attachments/assets/90882ec6-b9fb-4c97-b0fa-ea978237cb00" width="400" height="400"/>
+<img src="https://github.com/user-attachments/assets/1d843b40-4a0e-482b-a080-86fe629dc148" width="400" height="600"/>
+<img src="https://github.com/user-attachments/assets/d5a27d9d-7cd6-44af-9546-cd8a2d09eee8" width="400" height="600"/>
 ## 📈 Utilized Tools fot Traffic Analysis
 * for KAIST
 
