@@ -66,13 +66,13 @@
 
 ## 📈 Visualizations of Traffic Analysis Tools
 
-### Lane Change (LC)
+### [Microscopic] Lane Change (LC)
 <img src="https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123" width="30%"/>
 
-### Time-Space Diagram (Site G)
+###  [Microscopic] Time-Space Diagram (Site G)
 <img src="https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe" width="30%"/>
 
-### Flow-Density & RoI View
+### Flow-Density Diagram 
 <img src="https://github.com/user-attachments/assets/ee73e5e9-43c1-41f2-815b-8636a587de6c" width="30%"/>
 
 ### Speed Heatmap
