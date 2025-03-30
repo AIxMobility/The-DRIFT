@@ -64,31 +64,25 @@
 
 ```
 
-## 🖼️ Visualizations of Traffic Analysis Tools
+## 📈 Visualizations of Traffic Analysis Tools
 
 ### Lane Change (LC)
-![LaneChange](https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123)
 <img src="https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123" width="30%"/>
 
 ### Time-Space Diagram (Site G)
-![TimeSpace](https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe)
+<img src="https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe" width="30%"/>
 
 ### Flow-Density & RoI View
-![FlowDensity](https://github.com/user-attachments/assets/ee73e5e9-43c1-41f2-815b-8636a587de6c)
+<img src="https://github.com/user-attachments/assets/ee73e5e9-43c1-41f2-815b-8636a587de6c" width="30%"/>
 
 ### Speed Heatmap
-![SpeedHeatmap](https://github.com/user-attachments/assets/b078efe9-a630-471c-aaa4-37f9f2b3e356)
+<img src="https://github.com/user-attachments/assets/b078efe9-a630-471c-aaa4-37f9f2b3e356" width="30%"/>
 
 ### Time-to-Collision (TTC)
-![TTC](https://github.com/user-attachments/assets/96c667bf-b866-4f1c-9455-2ebb37182fa6)
+<img src="https://github.com/user-attachments/assets/96c667bf-b866-4f1c-9455-2ebb37182fa6" width="30%"/>
 
-## 📈 Tools and Use Cases
-- Used in urban traffic safety analysis and simulation studies
-- Integrated with AIMSUN/VISSIM via trajectory conversion
-- Supports training of trajectory-based prediction or detection models
 
 ## ⚙️ Quick Start
-
 ```bash
 # Clone the repository
 git clone https://github.com/AIxMobility/The-DRIFT
