@@ -1,23 +1,24 @@
-# The DRIFT Open Dataset
+# 📡 The DRIFT Open Dataset
 
 ## 🚀 Project Overview
-The DRIFT is comprehensive open-source research project focusing on advanced vehicle detection, tracking, and traffic pattern analysis using high-resolution drone imagery across diverse urban and rural environments.
+**DRIFT (Drone-derived Intelligent for Traffic analysis)** is an open-source dataset designed to advance traffic behavior research through high-resolution drone imagery. It enables accurate vehicle detection, trajectory tracking, and traffic flow analysis across complex urban intersections.
 
+## 🎯 Research Objectives
+- Provide a large-scale, annotated drone dataset optimized for traffic analysis
+- Support urban mobility research with pre-trained models and tools
+- Enable multi-scale traffic analysis (micro, meso, macro)
 
-### 📊 Key Research Contributions (Sample)
-* Large-scale drone-captured vehicle detection dataset
-* Advanced deep learning models for real-time vehicle tracking
-* Comprehensive traffic flow and congestion analysis algorithms
-
-### 🔬 Research Objectives (Sample)
-* Provide a standardized, annotated drone dataset for traffic analysis
-* Provide open-source tools for urban mobility research
+## 📊 Key Contributions
+- 81,699 annotated vehicle trajectories captured over 2.6 km of urban roadways
+- High-resolution vehicle tracking using OBB-based detection
+- Integrated tools for lane-change, TTC, congestion, and flow-density analysis
+- Stabilized video data and real-world orthophoto-mapped trajectories
 
 ## 📦 Dataset Specifications
-* Site information
-* Recorded video information
-* Provided dataset information
-* Used model information
+- **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea  
+- **Imagery**: 4K drone footage with frame-level annotations  
+- **Trajectory format**: Real-world coordinates with speed, acceleration, and vehicle heading  
+- **Model**: YOLOv8 + ByteTrack with polygon-based OBB detection
 
 ## 🗂️ Repository Structure (Sample)
 
