@@ -9,7 +9,7 @@
 - Enable multi-scale traffic analysis (micro, meso, macro)
 
 ## 📊 Key Contributions
-- 81,699 annotated vehicle trajectories captured over 2.6 km of urban roadways
+- About 81,699 annotated vehicle trajectories captured over 2.6 km of urban roadways
 - High-resolution vehicle tracking using OBB-based detection
 - Integrated tools for lane-change, TTC, congestion, and flow-density analysis
 - Stabilized video data and real-world orthophoto-mapped trajectories
@@ -18,25 +18,25 @@
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea  
 - **Imagery**: 4K drone footage with frame-level annotations  
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and vehicle heading  
-- **Model**: YOLOv8 + ByteTrack with polygon-based OBB detection
+- **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
 ## 🗂️ Repository Structure (Sample)
 
 ```DroneTrack/
 │
 ├── data/                      # Raw and processed drone data
-│   ├── csv/                   # Drone footage metadata
+│   ├── csv/                   # Frame-level trajectory metadata
 │   ├── sample_video/          # Sample drone videos
-│   ├── site_images/           # Site-specific images from drone footage
+│   ├── site_images/           # Reference frames in each site
 │
 ├── extraction/                # Data extraction and stabilization
-│   ├── preprocessing/         # Scripts for data preprocessing
+│   ├── preprocessing/         # Preprocessing pipeline
 │   │   ├── detect_and_track.py
 │   │   ├── json_to_csv.py             
 │   │   ├── lane.py
 │   │   ├── RoI.json
 │   │   ├── run.sh
-│   ├── stabilo/               # Stabilization-related scripts
+│   ├── stabilo/               # Stabilization scripts
 │   │   ├── run.sh
 |
 ├── model/                     # Annotation data and model training
@@ -64,51 +64,61 @@
 
 ```
 
-## 🔍 Visualization
+## 🖼️ Visualization Samples
 
-### Flow density relationship & ROI information
-![Image](https://github.com/user-attachments/assets/ee73e5e9-43c1-41f2-815b-8636a587de6c)
+### Lane Change (LC)
+![LaneChange](https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123)
 
-### LC
-![Image](https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123)
+### Time-Space Diagram (Site G)
+![TimeSpace](https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe)
 
-### Speed-heatmap
-![Image](https://github.com/user-attachments/assets/b078efe9-a630-471c-aaa4-37f9f2b3e356)
+### Flow-Density & RoI View
+![FlowDensity](https://github.com/user-attachments/assets/ee73e5e9-43c1-41f2-815b-8636a587de6c)
 
-### Time-space diagram of Site G
-![Image](https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe)
+### Speed Heatmap
+![SpeedHeatmap](https://github.com/user-attachments/assets/b078efe9-a630-471c-aaa4-37f9f2b3e356)
 
-### TTC
-![Image](https://github.com/user-attachments/assets/96c667bf-b866-4f1c-9455-2ebb37182fa6)
+### Time-to-Collision (TTC)
+![TTC](https://github.com/user-attachments/assets/96c667bf-b866-4f1c-9455-2ebb37182fa6)
 
+## 📈 Tools and Use Cases
+- Used in urban traffic safety analysis and simulation studies
+- Integrated with AIMSUN/VISSIM via trajectory conversion
+- Supports training of trajectory-based prediction or detection models
 
-## 📈 Utilized Tools fot Traffic Analysis
-* for KAIST
+## ⚙️ Quick Start
 
-
-## 🚀 Quick Start 
-```python
+```bash
 # Clone the repository
 git clone https://github.com/AIxMobility/The-DRIFT
+cd The-DRIFT
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Preprocess dataset
+# Preprocess the dataset
 sh extraction/preprocessing/run.sh
 
-# Stabilization video
+# Stabilize drone video
 sh extraction/stabilo/run.sh
 
 # Train detection model
 python model/train.py
 ```
+
 ## Acknowledgement
+This project references the open-source stabilization tool:
 * https://github.com/rfonod/stabilo
 
 ## Citing This Work
 If you use this project in your academic research, commercial products, or any published material, please acknowledge its use by citing it.
 ```
-?
+@article{noh2025drift,
+  title     = {DRIFT: Drone-derived Intelligent Dataset for Urban Traffic Analysis},
+  author    = {Byeongjoon Noh and et al.},
+  journal   = {Under Review},
+  year      = {2025},
+  note      = {Available at https://github.com/AIxMobility/The-DRIFT}
+}
 ```
 
