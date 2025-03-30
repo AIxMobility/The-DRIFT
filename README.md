@@ -20,7 +20,7 @@
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and vehicle heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
-## 🗂️ Repository Structure (Sample)
+## 🗂️ Repository Structure
 
 ```DroneTrack/
 │
@@ -64,10 +64,11 @@
 
 ```
 
-## 🖼️ Visualization Samples
+## 🖼️ Visualizations of Traffic Analysis Tools
 
 ### Lane Change (LC)
 ![LaneChange](https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123)
+<img src="https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123" width="30%"/>
 
 ### Time-Space Diagram (Site G)
 ![TimeSpace](https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe)
