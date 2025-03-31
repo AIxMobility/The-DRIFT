@@ -17,6 +17,3 @@ The `run.sh` script uses the following parameters:
 - **`--output <Output Path>`**: The path where the stabilized video will be saved.
 - **`--save`**: Enables saving the stabilized video output.
 - **`--no-mask`**: Disables masking during the stabilization process.
-
-https://github.com/user-attachments/assets/2ea7c219-5426-4d4a-a7db-ee4d4fedaa13
-
