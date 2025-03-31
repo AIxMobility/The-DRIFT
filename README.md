@@ -110,11 +110,11 @@ python model/train.py
     </tr>
     <tr>
       <td rowspan="2"><b>Mesoscopic</b></td>
-      <td>Flow-Density Diagram (Site I)</td>
+      <td>Flow-Density Diagram </td>
       <td><img src="https://github.com/user-attachments/assets/ee73e5e9-43c1-41f2-815b-8636a587de6c" width="40%"/></td>
     </tr>
     <tr>
-      <td>Time-Space Diagram (Site G)</td>
+      <td>Time-Space Diagram </td>
       <td><img src="https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe" width="40%"/></td>
     </tr>
     <tr>
