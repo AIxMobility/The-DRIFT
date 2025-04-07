@@ -114,7 +114,7 @@ python model/train.py
     </tr>
     <tr>
       <td>Time-to-Collision (TTC)</td>
-      <td><img src="https://github.com/user-attachments/assets/96c667bf-b866-4f1c-9455-2ebb37182fa6" width="70%"/></td>
+      <td><img src="https://github.com/user-attachments/assets/6c917dec-fd1c-494c-af72-8e1a0ddc8eef" width="70%"/></td>
     </tr>
     <tr>
       <td rowspan="2"><b>Mesoscopic</b></td>
