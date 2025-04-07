@@ -16,7 +16,7 @@
 
 ## Dataset Specifications
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea
-- Target site <img width="1479" alt="Image" src="https://github.com/user-attachments/assets/788bb716-c24d-4910-b10d-b724af3e8f0d" />
+- Target site: From 99 Daehak-ro to 291 Daehak-ro Daejeon in South Korea <img width="1479" alt="Image" src="https://github.com/user-attachments/assets/788bb716-c24d-4910-b10d-b724af3e8f0d" />
 - **Imagery**: 4K drone footage with frame-level annotations  
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
@@ -26,7 +26,7 @@
 <video src="https://github.com/user-attachments/assets/9c6845dd-912f-4665-b1a3-2f8d559d6723" controls width="600">
   Your browser does not support the video tag.
 </video>
-- Result of object detection using YOLOv11m model, manually annotated about 300K vehicle instances
+- Result of object detection using YOLOv11m model (approximately 300K vehicle instances manually annotated)
 <video src="https://github.com/user-attachments/assets/08aed82e-8514-4fd8-bb57-b651b7e30ff6" controls width="600">
   Your browser does not support the video tag.
 </video>
@@ -130,7 +130,7 @@ python model/train.py
     <tr>
       <td><b>Macroscopic</b></td>
       <td>Speed Heatmap</td>
-      <td><img src="https://github.com/user-attachments/assets/b08961ca-cf78-428c-9540-7bd173cdf577" width="60%"/></td>
+      <td><img src="https://github.com/user-attachments/assets/b08961ca-cf78-428c-9540-7bd173cdf577" width="70%"/></td>
     </tr>
   </tbody>
 </table>
