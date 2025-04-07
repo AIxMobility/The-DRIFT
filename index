@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The DRIFT - Auto-playing Video</title>
+</head>
+<body style="text-align:center; background-color:#f5f5f5; padding:40px;">
+  <h1>🎥 The DRIFT Demo</h1>
+  <video autoplay muted loop playsinline width="720">
+    <source src="od_small.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</body>
+</html>
