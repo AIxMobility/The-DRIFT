@@ -10,7 +10,7 @@
 
 ## Contributions
 - 81,699 annotated vehicle trajectories captured across 2.6 km of urban roadways
-- High-resolution tracking using polygon-based OBB (Oriented Bounding Box) detection
+- High-resolution tracking using polygon-based oriented bounding box (OBB) detection
 - Built-in tools for lane-change, TTC, congestion, and flow-density analysis
 - Stabilized video data and real-world orthophoto-mapped trajectories
 
