@@ -20,14 +20,8 @@
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and vehicle heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
-## Stabilization and Object Detection Videos!!
-<video src="https://github.com/user-attachments/assets/08aed82e-8514-4fd8-bb57-b651b7e30ff6" controls width="600">
-  Your browser does not support the video tag.
-</video>
+## Promotion Video (Stabilization and Object Detection)
 
-<video src="https://github.com/user-attachments/assets/9c6845dd-912f-4665-b1a3-2f8d559d6723" controls width="600">
-  Your browser does not support the video tag.
-</video>
 
 ## Quick Start
 ```bash
