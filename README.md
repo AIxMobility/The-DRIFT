@@ -13,6 +13,8 @@
 - High-resolution tracking using polygon-based OBB (Oriented Bounding Box) detection
 - Built-in tools for lane-change, TTC, congestion, and flow-density analysis
 - Stabilized video data and real-world orthophoto-mapped trajectories
+### Trajectory samples
+<img src="https://github.com/user-attachments/assets/473d7545-c73c-4fd1-bc92-e818f64f872f" width="70%"/>
 
 ## Dataset Specifications
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea  
