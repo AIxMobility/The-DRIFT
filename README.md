@@ -9,11 +9,11 @@
 - Enable multi-scale traffic analysis (microscopic, mesoscopic, and macroscopic)
 
 ## Contributions
-- 81,699 annotated vehicle trajectories captured across 2.6 km of urban roadways
-- High-resolution tracking using polygon-based oriented bounding box (OBB) detection
-- Built-in tools for lane-change, TTC, congestion, and flow-density analysis
-- Stabilized video data and real-world orthophoto-mapped trajectories
-
+- o detect and track vehicle instances in high resolution using polygon-based oriented bounding boxes (OBB) at an **altitude of 250 meters**
+- To stabilize video data and real-world orthophoto-mapped trajectories
+- To provide **81,699 annotated vehicle trajectories** collected across 2.6 km of urban roadways
+- To offer built-in tools for lane-change analysis, time-to-collision (TTC), congestion detection, flow-density analysis, and more
+  
 ## Dataset Specifications
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea
   - Target site: From 99 Daehak-ro to 291 Daehak-ro Daejeon in South Korea <img width="1479" alt="Image" src="https://github.com/user-attachments/assets/788bb716-c24d-4910-b10d-b724af3e8f0d" />
