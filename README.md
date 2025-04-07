@@ -21,15 +21,17 @@
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
-## Demo Videos
-
-<img src="https://github.com/user-attachments/assets/8c270a64-e8c1-46f5-95b9-026bcc0dd40b" width="70%"/>
-<video src="https://github.com/user-attachments/assets/08aed82e-8514-4fd8-bb57-b651b7e30ff6" controls width="600">
-  Your browser does not support the video tag.
-</video>
+## Demos
+- Frame stabilization
 <video src="https://github.com/user-attachments/assets/9c6845dd-912f-4665-b1a3-2f8d559d6723" controls width="600">
   Your browser does not support the video tag.
 </video>
+- Result of object detection using YOLOv11m model, manually annotated about 300K vehicle instances
+<video src="https://github.com/user-attachments/assets/08aed82e-8514-4fd8-bb57-b651b7e30ff6" controls width="600">
+  Your browser does not support the video tag.
+</video>
+- Visualized trajectories in DRIFT open dataset
+<img src="https://github.com/user-attachments/assets/8c270a64-e8c1-46f5-95b9-026bcc0dd40b" width="70%"/>
 
 ## Quick Start
 ```bash
