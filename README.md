@@ -20,13 +20,16 @@
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and vehicle heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
+### Object Detection
+<video src="https://github.com/user-attachments/assets/08aed82e-8514-4fd8-bb57-b651b7e30ff6" controls width="600">
+  Your browser does not support the video tag.
+</video>
+
 ## Quick Start
 ```bash
 # Clone the repository
 git clone https://github.com/AIxMobility/The-DRIFT
-cd The-DRIFT
 
-# ??
 ```
 
 ## Object Detection Model Customization 
