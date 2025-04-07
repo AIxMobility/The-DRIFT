@@ -16,7 +16,7 @@
 
 ## Dataset Specifications
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea
-- Target site: From 99 Daehak-ro to 291 Daehak-ro Daejeon in South Korea <img width="1479" alt="Image" src="https://github.com/user-attachments/assets/788bb716-c24d-4910-b10d-b724af3e8f0d" />
+  - Target site: From 99 Daehak-ro to 291 Daehak-ro Daejeon in South Korea <img width="1479" alt="Image" src="https://github.com/user-attachments/assets/788bb716-c24d-4910-b10d-b724af3e8f0d" />
 - **Imagery**: 4K drone footage with frame-level annotations  
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
