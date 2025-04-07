@@ -1,26 +1,26 @@
 # The DRIFT Open Dataset
 
-## Project Overview
-**DRIFT (Drone-derived Intelligent for Traffic analysis)** is an open-source dataset designed to advance traffic behavior research through high-resolution drone imagery. It enables accurate vehicle detection, trajectory tracking, and traffic flow analysis across complex urban intersections.
+## Overview
+**DRIFT (Drone-derived Intelligent for Traffic analysis)** is an open-source dataset designed to support advanced traffic behavior research using high-resolution drone imagery. It enables accurate vehicle detection, trajectory tracking, and traffic flow analysis across complex urban intersections.
 
-## Research Objectives
+## Objectives
 - Provide a large-scale, annotated drone dataset optimized for traffic analysis
-- Support urban mobility research with pre-trained models and tools
-- Enable multi-scale traffic analysis (micro, meso, macro)
+- Support urban mobility research with pre-trained models and analytical tools
+- Enable multi-scale traffic analysis (microscopic, mesoscopic, and macroscopic)
 
-## Key Contributions
-- About 81,699 annotated vehicle trajectories captured over 2.6 km of urban roadways
-- High-resolution vehicle tracking using OBB-based detection
-- Integrated tools for lane-change, TTC, congestion, and flow-density analysis
+## Contributions
+- 81,699 annotated vehicle trajectories captured across 2.6 km of urban roadways
+- High-resolution tracking using polygon-based OBB (Oriented Bounding Box) detection
+- Built-in tools for lane-change, TTC, congestion, and flow-density analysis
 - Stabilized video data and real-world orthophoto-mapped trajectories
 
 ## Dataset Specifications
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea  
 - **Imagery**: 4K drone footage with frame-level annotations  
-- **Trajectory format**: Real-world coordinates with speed, acceleration, and vehicle heading  
+- **Trajectory format**: Real-world coordinates with speed, acceleration, and heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
-## Promotion Video (Stabilization and Object Detection)
+## Demo Videos
 <video src="https://github.com/user-attachments/assets/08aed82e-8514-4fd8-bb57-b651b7e30ff6" controls width="600">
   Your browser does not support the video tag.
 </video>
@@ -35,7 +35,7 @@ git clone https://github.com/AIxMobility/The-DRIFT
 
 ```
 
-## Object Detection Model Customization 
+## Model Customization 
 ```bash
 # Install dependencies
 pip install -r requirements.txt
@@ -66,7 +66,7 @@ python model/train.py
 │   │   ├── lane.py
 │   │   ├── RoI.json
 │   │   ├── run.sh
-│   ├── stabilo/               # Stabilization scripts
+│   ├── stabilo/               # Stabilization scripts (Ack.: https://github.com/rfonod/stabilo)
 │   │   ├── run.sh
 |
 ├── model/                     # Annotation data and model training
@@ -95,7 +95,6 @@ python model/train.py
 ```
 
 ## Visualizations of Traffic Analysis Tools
-
 <table>
   <thead>
     <tr>
@@ -131,20 +130,9 @@ python model/train.py
   </tbody>
 </table>
 
-
-## Acknowledgement
-This project references the open-source stabilization tool:
-* https://github.com/rfonod/stabilo
-
-## Citing This Work
+## Citation
 If you use this project in your academic research, commercial products, or any published material, please acknowledge its use by citing it.
 ```
-@article{noh2025drift,
-  title     = {DRIFT: Drone-derived Intelligent Dataset for Urban Traffic Analysis},
-  author    = {Byeongjoon Noh and et al.},
-  journal   = {Under Review},
-  year      = {2025},
-  note      = {Available at https://github.com/AIxMobility/The-DRIFT}
-}
+TBD
 ```
 
