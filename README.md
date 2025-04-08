@@ -112,7 +112,7 @@ python model/train.py
     <tr>
       <td rowspan="2"><b>Microscopic</b></td>
       <td>Lane Change (LC)</td>
-      <td><img src="https://github.com/user-attachments/assets/8e32dcfd-0df9-4a75-abe0-0c3ee60b3123" width="70%"/></td>
+      <td><img src="https://github.com/user-attachments/assets/e5146f82-9ab4-4e4c-ac83-30dbcb537e25" width="70%"/></td>
     </tr>
     <tr>
       <td>Time-to-Collision (TTC)</td>
