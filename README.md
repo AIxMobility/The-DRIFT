@@ -23,7 +23,7 @@
 
 ## Demos
 - Frame stabilization
-<video src="https://github.com/user-attachments/assets/9c6845dd-912f-4665-b1a3-2f8d559d6723" controls width="600">
+<video src="https://github.com/user-attachments/assets/3468c496-dd18-445f-ab59-324beb871037" controls width="600">
   Your browser does not support the video tag.
 </video>
 - Result of object detection using YOLOv11m model (approximately 300K vehicle instances manually annotated)
