@@ -42,6 +42,9 @@ git clone https://github.com/AIxMobility/The-DRIFT
 
 ## Model Customization 
 ```bash
+# Create conda env
+conda create -n DRIFT python=3.11 -y
+
 # Install dependencies
 pip install -r requirements.txt
 
