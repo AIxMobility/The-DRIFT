@@ -39,7 +39,13 @@
 git clone https://github.com/AIxMobility/The-DRIFT
 
 ```
+## Dataset Load
+```
+from datasets import load_dataset
+# DRIFT dataset load
+dataset = load_dataset("Hj-Lee/DRIFT")
 
+```
 ## Model Customization 
 ```bash
 # Create conda env
