@@ -39,13 +39,13 @@
 git clone https://github.com/AIxMobility/The-DRIFT
 
 ```
-## Dataset Load
+## Load Dataset 
 ```
 # DRIFT dataset load
 from datasets import load_dataset
 
+# Load the entire dataset
 dataset = load_dataset("Hj-Lee/DRIFT")
-
 ```
 ## Model Customization 
 ```bash
