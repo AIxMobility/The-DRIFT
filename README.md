@@ -141,6 +141,14 @@ python model/train.py
 ## Citation
 If you use this project in your academic research, commercial products, or any published material, please acknowledge its use by citing it.
 ```
-TBD
+@misc{lee2025driftopendatasetdronederived,
+      title={DRIFT open dataset: A drone-derived intelligence for traffic analysis in urban environment}, 
+      author={Hyejin Lee and Seokjun Hong and Jeonghoon Song and Haechan Cho and Zhixiong Jin and Byeonghun Kim and Joobin Jin and Jaegyun Im and Byeongjoon Noh and Hwasoo Yeo},
+      year={2025},
+      eprint={2504.11019},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.11019}, 
+}
 ```
 
