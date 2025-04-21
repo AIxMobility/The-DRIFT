@@ -14,7 +14,8 @@
 - To provide **81,699 annotated vehicle trajectories** collected across 2.6 km of urban roadways
 - To offer object detection/tracking model for customization and the built-in tools for lane-change analysis, time-to-collision (TTC), congestion detection, flow-density analysis, and more
   
-## Dataset Specifications
+## Dataset Specifications![ttc_new]
+
 - **Site coverage**: 9 interconnected urban intersections in Daejeon, South Korea
   - Target site: From 99 Daehak-ro to 291 Daehak-ro Daejeon in South Korea <img width="1479" alt="Image" src="https://github.com/user-attachments/assets/788bb716-c24d-4910-b10d-b724af3e8f0d" />
 - **Imagery**: 4K drone footage with frame-level annotations  
@@ -125,7 +126,7 @@ python model/train.py
     </tr>
     <tr>
       <td>Time-to-Collision (TTC)</td>
-      <td><img src="https://github.com/user-attachments/assets/6c917dec-fd1c-494c-af72-8e1a0ddc8eef" width="70%"/></td>
+      <td><img src="https://github.com/user-attachments/assets/578cdc8a-e2cb-4613-9953-6e7890177251" width="70%"/></td>
     </tr>
     <tr>
       <td rowspan="2"><b>Mesoscopic</b></td>
