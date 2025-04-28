@@ -34,13 +34,10 @@
 - Visualized trajectories in DRIFT open dataset
 <img src="https://github.com/user-attachments/assets/8c270a64-e8c1-46f5-95b9-026bcc0dd40b" width="70%"/>
 
-## Quick Start
-```bash
-# Clone the repository
-git clone https://github.com/AIxMobility/The-DRIFT
+## Download Dataset (Huggingface)
+https://huggingface.co/datasets/Hj-Lee/The-DRIFT
 
-```
-## Load Dataset 
+## Download Dataset (in Python)
 ```
 # DRIFT dataset load
 from datasets import load_dataset
@@ -49,6 +46,9 @@ dataset = load_dataset("Hj-Lee/The-DRIFT")
 ```
 ## Model Customization 
 ```bash
+# Clone the repository
+git clone https://github.com/AIxMobility/The-DRIFT
+
 # Create conda env
 conda create -n DRIFT python=3.11 -y
 
