@@ -3,7 +3,7 @@ import subprocess
 
 # Setting example
 VIDEO_PATHS = "./data/sample_video/DJI_0025_cut1.MP4"
-SCRIPT_PATH = "./preprocessing/scripts/stabilize_video.py"
+SCRIPT_PATH = "./preprocessing/stabilo/stabilize_video.py"
 OPTIONS = "--save --no-mask"
 REF_FRAME_PATH = "./data/site_images/SiteB.jpg"
 
