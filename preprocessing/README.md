@@ -9,7 +9,7 @@
  
 - `roi.json` : A json file containing the roi for each site-specific lane, used by `lane.py`.
 
-- `extraction.sh` : Defined to run all of the preprocessing, and can be commented out as needed to run only the necessary files.
+- `extraction.sh`,`extraction.py`  : Defined to run all of the preprocessing, and can be commented out as needed to run only the necessary files.
   
 ### Commands Used
 1. Run all processes at once :
@@ -18,42 +18,6 @@
 ```python
 sh extraction.sh
 ```
-
-2. Run only `detect_and_track.py`
-```python
-python detect_and_track.py
- --model <Your Model Path> \
- --input <Input Video Path> \
- --output <Output Path>
-```
-```python
-# After commenting out lines 7 to 17
-sh extraction.sh
-```
-  
-3. Run only `json_to_csv.py` 
-```python
-python json_to_csv.py
- --json_dir <Your Json File Path> \
- --output <Output Path>
-```
-```python
-# After commenting out lines 1 to 5 and 12 to 17
-sh extraction.sh
-```
-      
-4. Run only `lane.py`
-```python
-python lane.py
- --site <Site corresponding to the dataset> \
- --input <CSV File Path> \
- --output <Output Path> \
- --roi <Path to the Json file containing the ROI information>
-```
-```python
-# After commenting out lines 1 to 10
-sh extraction.sh
-``` 
 
 ## 📘 stabilo
 - `stabilization.sh` : This script is used to stabilize a given video using a reference frame. It sets necessary environment variables and executes the stabilization script with the specified options.
