@@ -69,9 +69,9 @@ sh stabilization.sh
 2. Explanation of Parameters
 The `stabilization.sh` script uses the following parameters:
 
-- **`--model <Your Model Path>`**: The path to the stabilization model used in the script.
-- **`--input <Input Video Path>`**: The path to the input video that needs stabilization.
-- **`--output <Output Path>`**: The path where the stabilized video will be saved.
+- **`VIDEO_PATHS`**: Video paths to stabilize
+- **`REF_FRAME_PATH`**: Path to the reference frame of the video to be stabilized.
+- **`SCRIPT_PATH`**: Path to the file to be executed.
 - **`--save`**: Enables saving the stabilized video output.
 - **`--no-mask`**: Disables masking during the stabilization process.
 
