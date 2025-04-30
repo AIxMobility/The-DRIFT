@@ -22,7 +22,7 @@ sh extraction.sh
 2. Explanation of Parameters
 The **`extraction.sh`** script uses the following parameters:
 
-**`--model`** : Your Model Path>
+**`--model`** : Your Model Path
 **`--input`** : Input Video Path
 **`--output`** : Output Path
 
