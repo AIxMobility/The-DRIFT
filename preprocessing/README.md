@@ -22,13 +22,16 @@ sh extraction.sh
 2. Explanation of Parameters
 The **`extraction.sh`** script uses the following parameters:
 
+* trajectory extraction
 - **`--model`** : Your Model Path
 - **`--input`** : Input Video Path
 - **`--output`** : Output Path
 
+* json to csv
 - **`--json_dir`** : Your Json File Path
 - **`--output`** : Output Path
 
+* add lane variable
 - **`--site`** : Site corresponding to the dataset 
 - **`--input`** : CSV File Path 
 - **`--output`** : Output Path 
