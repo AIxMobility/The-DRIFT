@@ -51,8 +51,10 @@ git clone https://github.com/AIxMobility/The-DRIFT
 
 # Create conda env
 conda create -n DRIFT python=3.11 -y
+conda activate DRIFT
 
 # Install dependencies
+cd The-DRIFT
 pip install -r requirements.txt
 
 # Preprocess the dataset
