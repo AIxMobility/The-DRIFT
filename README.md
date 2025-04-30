@@ -60,8 +60,8 @@ sh preprocessing/extraction.sh
 python preprocessing/extraction.py
 
 # Stabilize drone video
-sh preprocessing/stabilization.sh
-python preprocessing/stabilization.py
+sh preprocessing/stabilo/stabilization.sh
+python preprocessing/stabilo/stabilization.py
 
 # Train detection model
 python model/train.py
