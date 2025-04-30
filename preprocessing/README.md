@@ -22,20 +22,20 @@ sh extraction.sh
 2. Explanation of Parameters
 The **`extraction.sh`** script uses the following parameters:
 
-* trajectory extraction
-- **`--model`** : Your Model Path
-- **`--input`** : Input Video Path
-- **`--output`** : Output Path
+- `trajectory extraction`
+  - **`--model`** : Your Model Path
+  - **`--input`** : Input Video Path
+  - **`--output`** : Output Path
 
-* json to csv
-- **`--json_dir`** : Your Json File Path
-- **`--output`** : Output Path
+- `json to csv`
+  - **`--json_dir`** : Your Json File Path
+  - **`--output`** : Output Path
 
-* add lane variable
-- **`--site`** : Site corresponding to the dataset 
-- **`--input`** : CSV File Path 
-- **`--output`** : Output Path 
-- **`--roi`** : Path to the Json file containing the ROI information
+- `add lane variable`
+  - **`--site`** : Site corresponding to the dataset
+  - **`--input`** : CSV File Path
+  - **`--output`** : Output Path
+  - **`--roi`** : Path to the Json file containing the ROI information
 
 ## 📘 stabilo
 - **`stabilization.sh`**,**`stabilization.py`** : This script is used to stabilize a given video using a reference frame. It sets necessary environment variables and executes the stabilization script with the specified options.
