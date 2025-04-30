@@ -1,6 +1,6 @@
-# 🗂️ preprocessing
+# preprocessing
 
-## 📙 stabilo
+## stabilo
 - **`stabilization.sh`**,**`stabilization.py`** : This script is used to stabilize a given video using a reference frame. It sets necessary environment variables and executes the stabilization script with the specified options.
 
 ### Commands Used
@@ -19,7 +19,7 @@ The **`stabilization.sh`** script uses the following parameters:
 - **`SCRIPT_PATH`**: Path to the file to be executed.
 - **`OPTIONS`**: Enable or disable saving the stabilized video output and masking, **`default`** : --save, --no-mask
 
-## 📘extraction
+## extraction
 - **`detect_and_track.py`** : Python script to implement object detection and tracking for the DRIFT dataset. The script detects traffic objects (e.g. cars, buses, trucks) in pre-processed drone video frames, generates vehicle trajectories, applies orientation bounding boxes (OBBs) to accurately capture vehicle orientation, and provides data in the form of a json file for subsequent traffic analysis.
  
 - **`json_to_csv.py`** : Python script designed to convert traffic data in JSON format extracted from drone footage to CSV format. The script processes structured data (e.g. vehicle coordinates, IDs, attributes) during the preprocessing and detection stages so that it can be seamlessly integrated into the final CSV-based dataset available on GitHub, and supports flexible format conversions such as JSON.           
@@ -56,7 +56,7 @@ The **`extraction.sh`** script uses the following parameters:
   - **`--output`** : Output path
   - **`--roi`** : Path to the json file containing the ROI information
 
-## 📗 geoalign
+## geoalign
 
 - **`geoalign_roi.json`** : Includes normal point-in-time roi (Site_F / Site_G) and abnormal point-in-time roi (Site_F_raw / Site_G_raw) for Site F/G
  
