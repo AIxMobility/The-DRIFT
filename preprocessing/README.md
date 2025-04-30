@@ -19,6 +19,37 @@ The **`stabilization.sh`** script uses the following parameters:
 - **`SCRIPT_PATH`**: Path to the file to be executed.
 - **`OPTIONS`**: Enable or disable saving the stabilized video output and masking, **`default`** : --save, --no-mask
 
+### Acknowledgement
+
+This project is based on the [Stabilo](https://github.com/rfonod/stabilo) repository by Robert Fonod, licensed under the MIT License.  
+Certain parts have been adapted and modified to better suit the needs of this project.
+- `GitHub` : [https://github.com/rfonod/stabilo](https://github.com/rfonod/stabilo)
+```
+@software{fonod2025stabilo,
+  author = {Fonod, Robert},
+  license = {MIT},
+  month = apr,
+  title = {Stabilo: A Comprehensive Python Library for Video and Trajectory Stabilization with User-Defined Masks},
+  url = {https://github.com/rfonod/stabilo},
+  doi = {10.5281/zenodo.12117092},
+  version = {1.0.1},
+  year = {2025}
+}
+```  
+- `DOI` : [10.5281/zenodo.12117092](https://doi.org/10.5281/zenodo.12117092)
+```
+@misc{fonod2025advanced,
+  title={Advanced computer vision for extracting georeferenced vehicle trajectories from drone imagery}, 
+  author={Robert Fonod and Haechan Cho and Hwasoo Yeo and Nikolas Geroliminis},
+  year={2025},
+  eprint={2411.02136},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2411.02136},
+  doi={https://doi.org/10.48550/arXiv.2411.02136}
+}
+```
+
 ## extraction
 - **`detect_and_track.py`** : Python script to implement object detection and tracking for the DRIFT dataset. The script detects traffic objects (e.g. cars, buses, trucks) in pre-processed drone video frames, generates vehicle trajectories, applies orientation bounding boxes (OBBs) to accurately capture vehicle orientation, and provides data in the form of a json file for subsequent traffic analysis.
  
