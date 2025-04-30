@@ -19,8 +19,6 @@ The **`stabilization.sh`** script uses the following parameters:
 - **`SCRIPT_PATH`**: Path to the file to be executed.
 - **`OPTIONS`**: Enable or disable saving the stabilized video output and masking, **`default`** : --save, --no-mask
 
-https://github.com/user-attachments/assets/7fcfee0e-d95c-4ce4-822c-91e8fb6ec0cd
-
 ## 📘extraction
 - **`detect_and_track.py`** : Python script to implement object detection and tracking for the DRIFT dataset. The script detects traffic objects (e.g. cars, buses, trucks) in pre-processed drone video frames, generates vehicle trajectories, applies orientation bounding boxes (OBBs) to accurately capture vehicle orientation, and provides data in the form of a json file for subsequent traffic analysis.
  
