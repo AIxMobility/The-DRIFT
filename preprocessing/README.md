@@ -43,20 +43,20 @@ sh extraction.sh
 2. Explanation of Parameters
 The **`extraction.sh`** script uses the following parameters:
 
-- `trajectory extraction`
-  - **`--model`** : Your Model Path
-  - **`--input`** : Input Video Path
-  - **`--output`** : Output Path
+- **`trajectory extraction`**
+  - **`--model`** : Your model path
+  - **`--input`** : Input video path
+  - **`--output`** : Output path
 
-- `json to csv`
-  - **`--json_dir`** : Your Json File Path
-  - **`--output`** : Output Path
+- **`json to csv`**
+  - **`--json_dir`** : Your json file path
+  - **`--output`** : Output path
 
-- `add lane variable`
+- **`add lane variable`**
   - **`--site`** : Site corresponding to the dataset
-  - **`--input`** : CSV File Path
-  - **`--output`** : Output Path
-  - **`--roi`** : Path to the Json file containing the ROI information
+  - **`--input`** : CSV file path
+  - **`--output`** : Output path
+  - **`--roi`** : Path to the json file containing the ROI information
 
 ## 📗 geoalign
 
