@@ -57,13 +57,13 @@ conda activate DRIFT
 cd The-DRIFT
 pip install -r requirements.txt
 
-# Preprocess the dataset
-sh preprocessing/extraction.sh
-python preprocessing/extraction.py
-
 # Stabilize drone video
 sh preprocessing/stabilization.sh
 python preprocessing/stabilization.py
+
+# Preprocess the dataset
+sh preprocessing/extraction.sh
+python preprocessing/extraction.py
 
 # Train detection model
 python model/train.py
