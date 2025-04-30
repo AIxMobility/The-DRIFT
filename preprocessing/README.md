@@ -19,7 +19,7 @@
 sh extraction.sh
 ```
 
-2. Run only `detect_and_track.py` : Choose between two methods
+2. Run only `detect_and_track.py`
 ```python
 python detect_and_track.py
  --model <Your Model Path> \
@@ -31,7 +31,7 @@ python detect_and_track.py
 sh extraction.sh
 ```
   
-3. Run only `json_to_csv.py` : Choose between two methods
+3. Run only `json_to_csv.py` 
 ```python
 python json_to_csv.py
  --json_dir <Your Json File Path> \
@@ -42,7 +42,7 @@ python json_to_csv.py
 sh extraction.sh
 ```
       
-4. Run only `lane.py` : Choose between two methods
+4. Run only `lane.py`
 ```python
 python lane.py
  --site <Site corresponding to the dataset> \
