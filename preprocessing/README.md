@@ -72,7 +72,7 @@ The `stabilization.sh` script uses the following parameters:
 - **`VIDEO_PATHS`**: Video paths to stabilize
 - **`REF_FRAME_PATH`**: Path to the reference frame of the video to be stabilized.
 - **`SCRIPT_PATH`**: Path to the file to be executed.
-- **`OPTIONS`**: Enable or disable saving the stabilized video output and masking, default : --save, --no-mask
+- **`OPTIONS`**: Enable or disable saving the stabilized video output and masking, **default** : --save, --no-mask
 
 https://github.com/user-attachments/assets/7fcfee0e-d95c-4ce4-822c-91e8fb6ec0cd
 
