@@ -56,10 +56,12 @@ conda create -n DRIFT python=3.11 -y
 pip install -r requirements.txt
 
 # Preprocess the dataset
-sh extraction/preprocessing/run.sh
+sh preprocessing/extraction.sh
+python preprocessing/extraction.py
 
 # Stabilize drone video
-sh extraction/stabilo/run.sh
+sh preprocessing/stabilization.sh
+python preprocessing/stabilization.py
 
 # Train detection model
 python model/train.py
@@ -74,15 +76,19 @@ python model/train.py
 │   ├── sample_video/          # Sample drone videos
 │   ├── site_images/           # Reference frames in each site
 │
-├── extraction/                # Data extraction and stabilization
-│   ├── preprocessing/         # Preprocessing pipeline
-│   │   ├── detect_and_track.py
-│   │   ├── json_to_csv.py             
-│   │   ├── lane.py
-│   │   ├── RoI.json
-│   │   ├── run.sh
+├── preprocessing/                # Data extraction and stabilization
+│   ├── detect_and_track.py
+│   ├── json_to_csv.py             
+│   ├── lane.py
+│   ├── RoI.json
+│   ├── extraction.sh
+│   ├── extraction.py
 │   ├── stabilo/               # Stabilization scripts (Ack.: https://github.com/rfonod/stabilo)
-│   │   ├── run.sh
+│   ├── scripts
+│   ├── stabilization.sh
+│   ├── stabilization.py
+│   ├── geoalign_roi.json
+│   ├── geoalign_transformation.ipynb
 |
 ├── model/                     # Annotation data and model training
 │   ├── test/                   
