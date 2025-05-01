@@ -11,9 +11,6 @@ import yaml
 
 
 def setup_logger(name: str, log_file: str = None, level: int = logging.INFO) -> logging.Logger:
-    """
-    Setup the logger
-    """
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     logger = logging.getLogger(name)
     logger.setLevel(level)
@@ -30,9 +27,6 @@ def setup_logger(name: str, log_file: str = None, level: int = logging.INFO) -> 
     return logger
 
 def timer(profiling: bool = False):
-    """
-    Decorator function to measure the execution time of a function.
-    """
     def decorator(func):
         def wrapper(*args, **kwargs):
             if not profiling:
@@ -45,9 +39,6 @@ def timer(profiling: bool = False):
     return decorator
 
 def load_config(cfg_filepath: str, logger: logging.Logger = None) -> dict:
-    """
-    Load the configuration file
-    """
     try:
         with open(cfg_filepath, 'r') as f:
             config = yaml.safe_load(f)
@@ -58,9 +49,6 @@ def load_config(cfg_filepath: str, logger: logging.Logger = None) -> dict:
     return config
 
 def xywh2four(boxes: np.ndarray) -> np.ndarray:
-    """
-    Convert bounding boxes from [xc, yc, w, h] to four point format [x1, y1, x2, y2, x3, y3, x4, y4].
-    """
     x_c, y_c, w, h = boxes.T
 
     x1 = x_c - 0.5 * w
@@ -75,10 +63,6 @@ def xywh2four(boxes: np.ndarray) -> np.ndarray:
     return np.column_stack((x1, y1, x2, y2, x3, y3, x4, y4))
 
 def four2xywh(boxes: np.ndarray) -> np.ndarray:
-    """
-    Convert bounding boxes from any four-point format [x1, y1, x2, y2, x3, y3, x4, y4]
-    to YOLO format [xc, yc, w, h], robust to any point order and rotation.
-    """
     points = boxes.reshape(-1, 4, 2)
 
     x_min = np.min(points[:, :, 0], axis=1)
@@ -95,9 +79,6 @@ def four2xywh(boxes: np.ndarray) -> np.ndarray:
     return np.column_stack((x_c, y_c, w, h))
 
 def detect_delimiter(filepath: str, lines_to_check: int = 5) -> str:
-    """
-    Detect the delimiter of a CSV file by reading a few lines
-    """
     delimiters = {',': 0, ' ': 0, '\t': 0}
     with open(filepath, 'r') as file:
         for _ in range(lines_to_check):

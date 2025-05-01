@@ -1,35 +1,6 @@
 # -*- coding: utf-8 -*-
 # Author: Robert Fonod (robert.fonod@ieee.org)
 
-"""
-stabilo.py - Reference frame video stabilization with optional user-provided exclusion masks
-
-This module provides the Stabilizer class for video or track stabilization using feature matching
-and transformation estimation. It leverages OpenCV for core functionalities.
-
-The class supports various feature detectors, matchers, filtering methods, and transformation types.
-Fine-tuning these parameters allows customization for specific video stabilization needs.
-
-The parameters for the feature detectors, matchers, filtering methods, and transformations can be
-fine-tuned to suit specific requirements, see https://github.com/rfonod/stabilo-optimize.
-
-Key Features:
-  - Video or bounding box (tracks) stabilization with respect to a reference frame.
-  - Fine-tunable parameters for feature detectors, matchers, filtering methods, and transformations.
-  - Support for various feature detectors (e.g., ORB, SIFT) and matchers (e.g., BF, FLANN).
-  - Projective or affine transformations for frame stabilization.
-  - RANSAC-based algorithms for robust transformation matrix estimation.
-  - CLAHE and pre-processing options for contrast enhancement.
-  - Visualization and debugging features for keypoints, descriptors, and masks.
-  - GPU acceleration for improved performance (not implemented yet).
-
-Usage:
-1. Create an instance of the 'Stabilizer' class with desired parameter configurations.
-2. Set a reference frame using the 'set_ref_frame' method.
-3. Stabilize any preceding or subsequent frames using the 'stabilize' method.
-4. Access stabilized frames, bounding boxes, and transformation matrices using specific methods.
-"""
-
 import sys
 from pathlib import Path
 from typing import Union
@@ -39,27 +10,16 @@ import numpy as np
 
 from stabilo_utils import four2xywh, load_config, setup_logger, timer, xywh2four
 
-# Configure logging
 logger = setup_logger(__name__)
 
-# Define the root directory
 ROOT = Path(__file__).resolve().parents[0]
 
-# Read the default parameters from a configuration file
 cfg = load_config(ROOT / "default.yaml", logger)
 
-# Profiling flag
 PROFILING = False
 
 
 class Stabilizer:
-    """
-    This class implements a video stabilizer. It uses feature matching to find the transformation
-    between the reference frame and the current frame, allowing stabilization of subsequent frames.
-    The transformation matrix can be used to transform the current frame to the reference frame or
-    to transform points from the current frame to the reference frame.
-    """
-
     VALID_DETECTORS = ['orb', 'sift', 'rsift', 'brisk', 'kaze', 'akaze']
     VALID_MATCHERS = ['bf', 'flann']
     VALID_FILTER_TYPES = ['none', 'ratio', 'distance']
@@ -77,33 +37,6 @@ class Stabilizer:
     }
 
     def __init__(self, **kwargs):
-        """
-        Initialize the Stabilizer with user-provided or default configurations.
-
-        Arguments:
-        - detector_name: str - feature detector to use (orb, sift, rsift, brisk, kaze, akaze)
-        - matcher_name: str - feature matcher to use (bf, flann)
-        - filter_type: str - filter type for the feature matcher (none, ratio, distance)
-        - transformation_type: str - transformation for stabilization (projective, affine)
-        - clahe: bool - use CLAHE for contrast enhancement
-        - downsample_ratio: float - down-sampling ratio for the frames (e.g., 0.5 for half the size)
-        - max_features: int - max number of features to detect (for BRISK, KAZE, and AKAZE this is an approximation)
-        - ref_multiplier: float - multiplier for max features in reference frame (ref_multiplier x max_features)
-        - mask_use: bool - use mask for feature detection
-        - filter_ratio: float - filtering ratio; Lowe's ratio for 'ratio' filter, distance threshold ratio for 'distance' filter
-        - ransac_method: int - method for RANSAC algorithm (see above for options)
-        - ransac_epipolar_threshold: float - threshold for RANSAC (e.g., 1.0)
-        - ransac_max_iter: int - max iterations for RANSAC (e.g., 2000)
-        - ransac_confidence: float - confidence for RANSAC (e.g., 0.999)
-        - brisk_threshold: int - threshold for BRISK detector (used only if 'max_features -> threshold' model is unavailable)
-        - kaze_threshold: float - threshold for KAZE detector (used only if 'max_features -> threshold' model is unavailable)
-        - akaze_threshold: float - threshold for AKAZE detector (used only if 'max_features -> threshold' model is unavailable)
-        - gpu: bool - use GPU acceleration (not fully implemented/tested yet)
-        - viz: bool - save some features for visualization (e.g., keypoints, descriptors, masks)
-        - benchmark: bool - different behavior for benchmarking purposes (e.g., re-use the last transformation if the current is None)
-        - min_good_match_count_warning: int - min number of good matches to trigger a warning
-        - min_inliers_match_count_warning: int - min number of inliers to trigger a warning
-        """
         self._load_configuration(kwargs)
         self._validate_arguments()
         self._initialize_variables()
@@ -113,16 +46,10 @@ class Stabilizer:
         self._create_helpers()
 
     def _load_configuration(self, kwargs):
-        """
-        Load configuration parameters, using defaults if not provided.
-        """
         for key, value in cfg.items():
             setattr(self, key, kwargs.get(key, value))
 
     def _initialize_variables(self):
-        """
-        Initialize internal variables for the Stabilizer.
-        """
         self.ref_frame, self.cur_frame = None, None
         self.ref_frame_gray, self.cur_frame_gray = None, None
         self.ref_boxes, self.cur_boxes = None, None
@@ -135,16 +62,10 @@ class Stabilizer:
         self.h, self.w = None, None
 
     def _create_feature_detectors(self):
-        """
-        Create feature detectors and descriptor extractors based on the provided configurations.
-        """
         self.detector_cur, self.detector_ref = self._create_detector(self.detector_name)
         self.norm_type = self._get_norm_type()
 
     def _create_detector(self, detector_name: str):
-        """
-        Create a feature detector based on the provided detector name.
-        """
         if detector_name == "orb":
             return self._create_orb_detectors()
         elif detector_name in ["sift", "rsift"]:
@@ -157,27 +78,18 @@ class Stabilizer:
             return self._create_akaze_detectors()
 
     def _create_orb_detectors(self):
-        """
-        Create ORB detectors and descriptor extractors.
-        """
         return (
             cv2.cuda.ORB_create(self.max_features) if self.gpu else cv2.ORB_create(self.max_features),
             cv2.cuda.ORB_create(round(self.ref_multiplier * self.max_features)) if self.gpu else cv2.ORB_create(round(self.ref_multiplier * self.max_features))
         )
 
     def _create_sift_detectors(self):
-        """
-        Create SIFT detectors and descriptor extractors.
-        """
         return (
             cv2.cuda.SIFT_create(self.max_features) if self.gpu else cv2.SIFT_create(self.max_features), # (enable_precise_upscale=True)
             cv2.cuda.SIFT_create(round(self.ref_multiplier * self.max_features)) if self.gpu else cv2.SIFT_create(round(self.ref_multiplier * self.max_features))
         )
 
     def _create_brisk_detectors(self):
-        """
-        Create BRISK detectors and descriptor extractors.
-        """
         threshold_cur, threshold_ref = self._get_thresholds()
         return (
             cv2.cuda.BRISK.create(thresh=round(threshold_cur)) if self.gpu else cv2.BRISK_create(thresh=round(threshold_cur)),
@@ -185,9 +97,6 @@ class Stabilizer:
         )
 
     def _create_kaze_detectors(self):
-        """
-        Create KAZE detectors and descriptor extractors.
-        """
         threshold_cur, threshold_ref = self._get_thresholds()
         return (
             cv2.cuda.KAZE_create(threshold=threshold_cur) if self.gpu else cv2.KAZE_create(threshold=threshold_cur),
@@ -195,9 +104,6 @@ class Stabilizer:
         )
 
     def _create_akaze_detectors(self):
-        """
-        Create AKAZE detectors and descriptor extractors.
-        """
         threshold_cur, threshold_ref = self._get_thresholds()
         return (
             cv2.cuda.AKAZE_create(threshold=threshold_cur) if self.gpu else cv2.AKAZE_create(threshold=threshold_cur),
@@ -205,9 +111,6 @@ class Stabilizer:
         )
 
     def _get_thresholds(self):
-        """
-        Get thresholds for BRISK, KAZE, and AKAZE based on precomputed models.
-        """
         detector_name = self.detector_name.upper()
         threshold_model_filepath = ROOT / 'thresholds' / 'models' / f'{detector_name}' / f'model_mask_{self.mask_use}_clahe_{self.clahe}.txt'
         if threshold_model_filepath.exists():
@@ -224,33 +127,21 @@ class Stabilizer:
         return threshold_cur, threshold_ref
 
     def _get_norm_type(self):
-        """
-        Get the norm type based on the detector name.
-        """
         if self.detector_name in ["orb", "brisk", "akaze"]:
             return cv2.NORM_HAMMING # N.B.: if ORB is using WTA_K == 3 or 4, cv.NORM_HAMMING2 should be used
         elif self.detector_name in ["sift", "rsift", "kaze"]:
             return cv2.NORM_L2
 
     def _create_matcher(self):
-        """
-        Create the feature matcher based on the provided configurations.
-        """
         if self.matcher_name == "bf":
             self.matcher = self._create_brute_force_matcher()
         elif self.matcher_name == "flann":
             self.matcher = self._create_flann_matcher()
 
     def _create_brute_force_matcher(self):
-        """
-        Create a brute-force matcher.
-        """
         return cv2.cuda.DescriptorMatcher_createBFMatcher(self.norm_type, crossCheck=(True,False)[self.filter_type=='ratio']) if self.gpu else cv2.BFMatcher(self.norm_type, crossCheck=(True,False)[self.filter_type=='ratio'])
 
     def _create_flann_matcher(self):
-        """
-        Create a FLANN-based matcher.
-        """
         if self.norm_type in [cv2.NORM_HAMMING, cv2.NORM_HAMMING2]:
             index_params = dict(algorithm=6, table_number=6, key_size=12, multi_probe_level=1)
         elif self.norm_type == cv2.NORM_L2:
@@ -259,37 +150,22 @@ class Stabilizer:
         return cv2.cuda.DescriptorMatcher_createFlannBasedMatcher(index_params, search_params) if self.gpu else cv2.FlannBasedMatcher(index_params, search_params)
 
     def _create_transformer(self):
-        """
-        Create the transformation matrix estimator based on the provided configurations.
-        """
         if self.transformation_type == 'projective':
             self.transformer = cv2.findHomography
         elif self.transformation_type == 'affine':
             self.transformer = cv2.estimateAffinePartial2D
 
     def _create_helpers(self):
-        """
-        Create helper objects for grayscale conversion, CLAHE, and resizing.
-        """
         self.grayscale_converter = cv2.cuda.cvtColor if self.gpu else cv2.cvtColor
         self.claher = cv2.cuda.createCLAHE(clipLimit=1.0, tileGridSize=(8, 8)) if self.gpu else cv2.createCLAHE(clipLimit=1.0, tileGridSize=(8, 8))
         self.resizer = cv2.cuda.resize if self.gpu else cv2.resize
 
     @timer(PROFILING)
     def set_ref_frame(self, frame: np.ndarray, boxes: np.ndarray = None, box_format: str = 'xywh') -> None:
-        """
-        Set the reference frame and object bounding boxes.
-        Calculate keypoints and descriptors for the reference frame.
-        """
         self.process_frame(frame, boxes, box_format, is_reference=True)
 
     @timer(PROFILING)
     def stabilize(self, frame: np.ndarray, boxes: np.ndarray = None, box_format: str = 'xywh') -> None:
-        """
-        This method takes an un-stabilized video frame and
-        calculates a transformation matrix that can transform
-        this frame or boxes to the reference frame coordinates.
-        """
         success = self.process_frame(frame, boxes, box_format, is_reference=False)
         if success:
             matches = self.get_matches(self.ref_desc, self.cur_desc)
@@ -302,9 +178,6 @@ class Stabilizer:
             self.calculate_transformation_matrix()
 
     def process_frame(self, frame: np.ndarray, boxes: np.ndarray = None, box_format: str = 'xywh', is_reference: bool = False) -> bool:
-        """
-        Process the given frame and bounding boxes.
-        """
         if frame is None:
             logger.error(f'{"Reference" if is_reference else "Current"} frame is invalid.')
             sys.exit(1)
@@ -340,9 +213,6 @@ class Stabilizer:
 
     @timer(PROFILING)
     def get_features_and_descriptors(self, frame: np.ndarray, mask: np.ndarray = None, ref_frame: bool = False) -> tuple:
-        """
-        Get the features and descriptors for the given frame.
-        """
         if frame is None:
             return None, None, None
 
@@ -383,9 +253,6 @@ class Stabilizer:
 
     @timer(PROFILING)
     def get_matches(self, desc1: np.ndarray, desc2: np.ndarray) -> list:
-        """
-        Match the given descriptors.
-        """
         if desc1 is None or desc2 is None:
             logger.warning("One of the descriptors is invalid.")
             return []
@@ -418,9 +285,6 @@ class Stabilizer:
 
     @timer(PROFILING)
     def calculate_transformation_matrix(self) -> None:
-        """
-        Estimate the transformation matrix using the current and reference points.
-        """
         if self.ref_pts is not None and self.cur_pts is not None and len(self.ref_pts) >= 4 and len(self.cur_pts) >= 4:
             try:
                 self.cur_trans_matrix, inliers = self.transformer(self.cur_pts, self.ref_pts, maxIters=self.ransac_max_iter,
@@ -459,9 +323,6 @@ class Stabilizer:
 
     @timer(PROFILING)
     def create_binary_mask(self, boxes: np.ndarray, box_format: str) -> np.ndarray:
-        """
-        Create a mask from the given bounding boxes.
-        """
         if self.h is None or self.w is None:
             logger.error("Reference frame is not set.")
             sys.exit(1)
@@ -481,15 +342,9 @@ class Stabilizer:
 
     @timer(PROFILING)
     def warp_cur_frame(self) -> Union[np.ndarray, None]:
-        """
-        Warp the current frame to the reference frame using the current transformation matrix.
-        """
         return self.warp_frame(self.cur_frame)
 
     def warp_frame(self, frame: np.ndarray) -> Union[np.ndarray, None]:
-        """
-        Warp the given frame to the reference frame using the current transformation matrix.
-        """
         if frame is None:
             return None
         if self.w is None or self.h is None:
@@ -504,15 +359,9 @@ class Stabilizer:
             return cv2.warpAffine(frame, self.cur_trans_matrix, (self.w, self.h))
 
     def transform_cur_boxes(self, out_box_format: str = 'xywh') -> Union[np.ndarray, None]:
-        """
-        Warp the current bounding boxes to the reference frame using the current transformation matrix.
-        """
         return self.transform_boxes(self.cur_boxes, self.cur_trans_matrix, self.cur_box_format, out_box_format)
 
     def transform_boxes(self, boxes: np.ndarray, trans_matrix: np.ndarray, in_box_format: str = 'xywh', out_box_format: str = 'xywh') -> Union[np.ndarray, None]:
-        """
-        Transform the provided bounding boxes using the provided transformation matrix.
-        """
         if boxes is None:
             return None
         if trans_matrix is None:
@@ -533,27 +382,15 @@ class Stabilizer:
             return boxes.reshape(-1, 8)
 
     def get_cur_frame(self) -> Union[np.ndarray, None]:
-        """
-        Get the current frame.
-        """
         return self.cur_frame
 
     def get_cur_boxes(self) -> Union[np.ndarray, None]:
-        """
-        Get the current bounding boxes.
-        """
         return self.cur_boxes
 
     def get_cur_trans_matrix(self) -> Union[np.ndarray, None]:
-        """
-        Get the current transformation matrix.
-        """
         return self.cur_trans_matrix
 
     def get_basic_info(self) -> dict:
-        """
-        Get basic information about the Stabilizer.
-        """
         return {
             'detector_name': self.detector_name,
             'matcher_name': self.matcher_name,
@@ -564,9 +401,6 @@ class Stabilizer:
         }
 
     def _validate_arguments(self):
-        """
-        Validate the arguments provided during the initialization of the Stabilizer class.
-        """
         if self.detector_name not in self.VALID_DETECTORS:
             raise ValueError(f"Invalid detector: {self.detector_name}. Choose from {self.VALID_DETECTORS}")
         if self.matcher_name not in self.VALID_MATCHERS:

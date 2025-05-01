@@ -14,9 +14,6 @@ from stabilo_utils import detect_delimiter, load_config
 MACOS, LINUX, WINDOWS = (platform.system() == x for x in ['Darwin', 'Linux', 'Windows'])
 
 def separate_cli_arguments(cli_args):
-    """
-    Get the command-line arguments and the corresponding keyword
-    """
     args = argparse.Namespace(**vars(cli_args))
     kwargs = drop_none_values(vars(cli_args))
 
@@ -30,15 +27,9 @@ def separate_cli_arguments(cli_args):
     return args, kwargs
 
 def drop_none_values(kwargs):
-    """
-    Drop None values from a dictionary.
-    """
     return {k: v for k, v in kwargs.items() if v is not None}
 
 def load_tracks(args, logger):
-    """
-    Read the tracks containing bounding boxes from a file.
-    """
     tracks_filepath = args.tracks or args.input.parent / f'{args.input.stem}.txt'
 
     if not tracks_filepath.exists():
@@ -56,9 +47,6 @@ def load_tracks(args, logger):
     return tracks
 
 def load_exclusion_masks(args, logger):
-    """
-    Read the exclusion masks (bounding boxes) from a file.
-    """
     if args.no_mask:
         logger.info('Exclusion masks disabled.')
         return None
@@ -81,16 +69,10 @@ def load_exclusion_masks(args, logger):
     return boxes
 
 def get_boxes_from_tracks(tracks, args, logger):
-    """
-    Get the bounding boxes from the tracks.
-    """
     columns = [args.boxes_frame_idx, *range(args.boxes_start_idx, args.boxes_start_idx + 4)]
     return get_boxes(tracks, columns, args.boxes_enc, logger)
 
 def get_boxes(boxes, columns, encoding, logger):
-    """
-    Get the bounding boxes from the exclusion masks or tracks.
-    """
     try:
         boxes = boxes[:, columns]
         if encoding == 'pascal':
@@ -109,17 +91,11 @@ def get_boxes(boxes, columns, encoding, logger):
     return boxes
 
 def get_boxes_for_frame(boxes, frame_num):
-    """
-    Get the exclusion masks (bounding boxes) for a specific frame.
-    """
     if boxes is None:
         return None
     return boxes[boxes[:, 0].astype(int) == frame_num, 1:]
 
 def initialize_read_streams(args, logger):
-    """
-    Initialize video reader and get video properties.
-    """
     if not args.input.exists():
         logger.error(f'File {args.input} not found.')
         sys.exit(1)
@@ -137,9 +113,6 @@ def initialize_read_streams(args, logger):
     return reader, frame_count, w, h, fps
 
 def initialize_write_streams(args, w, h, fps, logger):
-    """
-    Initialize video writers for the stabilized video and the visualization.
-    """
     writer_vid, writer_viz = None, None
     if args.save or args.save_viz:
         fourcc = 'avc1' if MACOS else 'WMV2' if WINDOWS else 'mp4v'
@@ -166,9 +139,6 @@ def initialize_write_streams(args, w, h, fps, logger):
     return writer_vid, writer_viz
 
 def initialize_track_write_stream(args, w, h, fps, logger):
-    """
-    Initialize video writer for the track visualization.
-    """
     writer_track = None
     if args.save_viz:
         fourcc = 'avc1' if MACOS else 'WMV2' if WINDOWS else 'mp4v'
@@ -188,15 +158,9 @@ def initialize_track_write_stream(args, w, h, fps, logger):
     return writer_track
 
 def initialize_progress_bar(args, frame_count):
-    """
-    Initialize the progress bar.
-    """
     return tqdm(total=frame_count, desc=f'Stabilizing {args.input}', unit='frames', leave=True, colour='green')
 
 def close_streams(args, reader, pbar, writer_vid=None, writer_viz=None, writer_track=None):
-    """
-    Close video reader, progress bar, video writers, and visualization window.
-    """
     reader.release()
     pbar.close()
     if writer_vid is not None:
@@ -209,9 +173,6 @@ def close_streams(args, reader, pbar, writer_vid=None, writer_viz=None, writer_t
         cv2.destroyAllWindows()
 
 def draw_boxes(img, boxes, color=(0, 255, 0), line_type=cv2.LINE_AA):
-    """
-    Draw bounding boxes.
-    """
     if boxes is not None:
         for box in boxes:
             x_c, y_c, w, h = box
@@ -220,9 +181,6 @@ def draw_boxes(img, boxes, color=(0, 255, 0), line_type=cv2.LINE_AA):
     return img
 
 def draw_text(img, text, font=cv2.FONT_HERSHEY_PLAIN, pos=(0, 0), scale=7, thickness=5, color_fg=(0, 255, 0)):
-    """
-    Draw text on an image.
-    """
     x, y = pos
     color_bg = (0, 0, 0)
     text_size, _ = cv2.getTextSize(text, font, scale, thickness)

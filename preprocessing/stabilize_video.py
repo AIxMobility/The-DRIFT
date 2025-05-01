@@ -2,86 +2,6 @@
 # -*- coding: utf-8 -*-
 # Author: Robert Fonod (robert.fonod@ieee.org)
 
-"""
-stabilize_video.py - Stabilize a video using the stabilo library.
-
-Description:
-    This script stabilizes videos using the 'stabilo' library. It reads a video file, stabilizes it using a reference
-    frame stabilization method, and optionally saves the stabilized video or the visualization of the stabilization
-    process. The stabilization is based on feature point matching between frames, followed by transformation estimation
-    using RANSAC. The script supports various feature detectors, matchers, and extensive customization through
-    command-line options or a configuration file. It also supports CLAHE application, video downsampling, and exclusion
-    masks (bounding boxes) for stabilization.
-
-Usage:
-    python stabilize_video.py <input> [options]
-
-Arguments:
-    input              : Filepath to the input video file.
-
-Main Options:
-    --output OUTPUT    : Output folder to save the stabilized video or visualization (default: same as input).
-    --save             : Save the stabilized video (default: False).
-    --ref-frame REF_FRAME : Custom reference frame index for stabilization (default: 0).
-    --debug            : Enable debug mode (default: False).
-
-Mask Options:
-    --no-mask          : Do not use exclusion masks during stabilization.
-    --mask-path MASK_PATH : Custom mask filepath (default: input with .txt extension).
-    --mask-frame-idx MASK_FRAME_IDX : Frame number column index in the mask file (default: 0).
-    --mask-start-idx MASK_START_IDX : Start column index of the 4 bounding box parameters used as masks (default: 2).
-    --mask-enc MASK_ENC : Bounding box encoding. Choices: 'yolo', 'pascal', 'coco' (default: yolo).
-
-Visualization Options:
-    --viz              : Visualize the transformation process (default: False).
-    --save-viz         : Save the visualization of the transformation process as a video (default: False).
-    --no-lines         : Hide lines between matched feature points (default: False).
-    --no-boxes         : Hide bounding boxes on the (un-)stabilized videos (default: False).
-    --speed SPEED      : Visualization speed in milliseconds (0 for manual control) (default: 10).
-
-Stabilo Configuration:
-    --custom-config    : Path to a config file that overrides the default stabilo parameters or the CLI arguments below.
-    --detector-name DETECT : Feature detector. Choices: 'orb', 'sift', 'rsift', 'brisk', 'kaze', 'akaze' (default: orb).
-    --matcher-name MATCHER    : Feature matcher. Choices: 'bf', 'flann' (default: bf).
-    --filter-type FILTER_TYPE : Type of match filter. Choices: 'none', 'ratio', 'distance' (default: ratio).
-    --transformation-type TRANSFORMATION_TYPE : Transformation. Choices: 'projective', 'affine' (default: projective).
-    --clahe            : Apply CLAHE to grayscale images (default: False).
-    --downsample-ratio DOWNSAMPLE_RATIO : Downsample ratio for the input video (default: 0.5).
-    --max-features MAX_FEATURES   : Maximum number of features to detect (default: 2000).
-    --ref-multiplier REF_MULTIPLIER : Multiplier for max features in reference frame (default: 2).
-    --filter-ratio FILTER_RATIO : Filter ratio for the match filter (default: 0.9).
-    --ransac-method RANSAC_METHOD : RANSAC method (default: 38 (MAGSAC++)).
-    --ransac-epipolar-threshold RANSAC_EPIPOLAR_THRESHOLD : RANSAC epipolar threshold (default: 2.0).
-    --ransac-max-iter RANSAC_MAX_ITER : RANSAC maximum iterations (default: 5000).
-    --ransac-confidence RANSAC_CONFIDENCE : RANSAC confidence (default: 0.999999).
-    --mask-margin-ratio MASK_MARGIN_RATIO : Mask margin ratio (default: 0.15).
-
-Examples:
-    1. Stabilize a video using default settings and save the stabilized video:
-       python stabilize_video.py path/to/video/video.mp4 --save
-
-    2. Visualize the stabilization process:
-       python stabilize_video.py path/to/video/video.mp4 --viz
-
-    3. Save a stabilized video using a custom detector and matcher:
-       python stabilize_video.py path/to/video/video.mp4 --detector-name sift --matcher-name flann --save
-
-    4. Apply stabilization without a mask and visualize the process:
-       python stabilize_video.py path/to/video/video.mp4 --no-mask --viz
-
-    5. Stabilize a video using a custom reference frame and save the stabilized video and visualization:
-       python stabilize_video.py path/to/video/video.mp4 --ref-frame 15 --save --save-viz
-
-    6. Use a custom mask filepath and specify start column index of the bounding boxes:
-        python stabilize_video.py path/to/video/video.mp4 --mask-path path/to/mask/mask.txt --mask-start 1 --viz
-
-    7. Apply stabilization with a custom configuration file:
-        python stabilize_video.py path/to/video/video.mp4 --custom-config path/to/config/config.yaml --save
-
-Notes:
-    - Press 'q' to quit the real-time visualization (--viz option).
-"""
-
 import argparse
 import sys
 from pathlib import Path
@@ -108,9 +28,6 @@ COLOURS = np.random.randint(0, 256, (100, 3))
 logger = setup_logger(__name__)
 
 def stabilize_video(args, kwargs):
-    """
-    Stabilize a video using the stabilo library.
-    """
     reader, frame_count, w, h, fps = initialize_read_streams(args, logger)
     writer_vid, writer_viz = initialize_write_streams(args, w, h, fps, logger)
     masks = load_exclusion_masks(args, logger)
@@ -122,7 +39,6 @@ def stabilize_video(args, kwargs):
     ref_frame_number = args.ref_frame
 
     try:
-        # Reference frame
         if Path(ref_frame_number).is_file():
             logger.info(f"Loading reference frame from image: {ref_frame_number}")
             ref_frame = cv2.imread(ref_frame_number)
@@ -179,10 +95,6 @@ def stabilize_video(args, kwargs):
         close_streams(args, reader, pbar, writer_vid, writer_viz)
 
 def render_stabilization_visuals(stabilizer, frame, frame_stab, boxes, boxes_stab, frame_num, args):
-    """
-    Illustrate the stabilization process with feature points, lines, and bounding boxes.
-    """
-
     def draw_mask(img, mask):
         if mask is not None:
             img = cv2.bitwise_and(img, img, mask=mask)
@@ -267,36 +179,28 @@ def render_stabilization_visuals(stabilizer, frame, frame_stab, boxes, boxes_sta
     return np.vstack((imgs_upper, imgs_lower))
 
 def get_cli_arguments():
-    """
-    Parse the command-line arguments.
-    """
     parser = argparse.ArgumentParser(description="Stabilize a video using the stabilo library.")
 
-    # main options
     parser.add_argument("input", type=Path, help="input video filepath")
     parser.add_argument("--output", "-o", type=Path, help="output folder [default: same as input]")
     parser.add_argument("--save", "-s", action="store_true", help="save the stabilized video")
     parser.add_argument("--ref-frame", "-rf", type=str, default='0', help="custom reference frame index")
     parser.add_argument("--debug", "-d", action="store_true", help="enable debug mode")
 
-    # mask options
     parser.add_argument("--no-mask", "-nm", action="store_true", help="disable exclusion masks during stabilization")
     parser.add_argument("--mask-path", "-mp", type=Path, help="custom mask file [default: input with .txt extension]")
     parser.add_argument("--mask-frame-idx", "-mfi", type=int, default=0, help="frame number column index in mask file")
     parser.add_argument("--mask-start-idx", "-msi", type=int, default=2, help="start column index for bbox in mask file")
     parser.add_argument("--mask-enc", "-me", type=str, default="yolo", choices=['yolo','pascal','coco'], help="mask encoding")
 
-    # visualization options
     parser.add_argument("--viz", "-v", action="store_true", help="visualize the transformation process")
     parser.add_argument("--save-viz", "-sv", action="store_true", help="save the visualization as a video at original FPS")
     parser.add_argument("--no-lines", "-nl", action="store_true", help="hide lines between matched feature points")
     parser.add_argument("--no-boxes", "-nb", action="store_true", help="hide bounding boxes on the (un-)stabilized frames")
     parser.add_argument("--speed", "-sp", type=int, default=10, help="visualization speed in ms (0 for manual control)")
 
-    # stabilo custom configuration file (override default stabilo parameters or the below CLI arguments)
     parser.add_argument("--custom-config", "-cc", type=Path, help="custom stabilo config file")
 
-    # stabilo configuration options (override default stabilo parameters, see stabilo/cfg/default.yaml)
     parser.add_argument("--detector-name", "-dn", type=str, choices=['orb', 'sift', 'rsift', 'brisk', 'kaze', 'akaze'], help="detector type [default: orb]")
     parser.add_argument("--matcher-name", "-mn", type=str, choices=['bf', 'flann'], help="matcher type [default: bf]")
     parser.add_argument("--filter-type", "-ft", type=str, choices=['none', 'ratio', 'distance'], help="filter type for the match filter [default: ratio]")
