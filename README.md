@@ -85,7 +85,11 @@ python model/train.py
 │   ├── RoI.json
 │   ├── extraction.sh
 │   ├── extraction.py
-│   ├── stabilo/            # Stabilization scripts (Ack.: https://github.com/rfonod/stabilo)
+│   ├── stabilo.py            # Stabilization scripts (Ack.: https://github.com/rfonod/stabilo)
+│   ├── default.yaml
+│   ├── stabilze_video.py
+│   ├── stabilo_utils.py
+│   ├── script_utils.py   
 │   ├── stabilization.sh
 │   ├── stabilization.py
 │   ├── geoalign_roi.json
