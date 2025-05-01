@@ -24,7 +24,7 @@ brisk_threshold: 130
 kaze_threshold: 0.01  
 akaze_threshold: 0.01  
 
-gpu: true
+gpu: false
 
 viz: false  
 benchmark: false  
