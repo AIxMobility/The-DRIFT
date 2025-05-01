@@ -1,7 +1,7 @@
 # preprocessing
 
 ## stabilo
-- **`default.yaml`**,**`script_utils.py`**,**`stabilize_video.py`**,**`stabilo.py`** : These files are based on the [Stabilo](https://github.com/rfonod/stabilo) and have been adapted with modifications.
+- **`default.yaml`**,**`script_utils.py`**,**`stabilize_video.py`**,**`stabilo.py`**,**`stabilo_utils.py`** : These files are based on the [Stabilo](https://github.com/rfonod/stabilo) and have been adapted with modifications.
 - **`stabilization.sh`**,**`stabilization.py`** : This script is used to stabilize a given video using a reference frame. It sets necessary environment variables and executes the stabilization script with the specified options.
 
 ### Commands Used
