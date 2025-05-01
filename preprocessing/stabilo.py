@@ -37,7 +37,7 @@ from typing import Union
 import cv2
 import numpy as np
 
-from .utils import four2xywh, load_config, setup_logger, timer, xywh2four
+from stabilo_utils import four2xywh, load_config, setup_logger, timer, xywh2four
 
 # Configure logging
 logger = setup_logger(__name__)
@@ -46,7 +46,7 @@ logger = setup_logger(__name__)
 ROOT = Path(__file__).resolve().parents[0]
 
 # Read the default parameters from a configuration file
-cfg = load_config(ROOT / "cfg" / "default.yaml", logger)
+cfg = load_config(ROOT / "default.yaml", logger)
 
 # Profiling flag
 PROFILING = False

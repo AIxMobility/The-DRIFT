@@ -88,7 +88,7 @@ from pathlib import Path
 
 import cv2
 import numpy as np
-from utils import (
+from script_utils import (
     close_streams,
     draw_boxes,
     draw_text,
@@ -101,7 +101,7 @@ from utils import (
 )
 
 from stabilo import Stabilizer
-from stabilo.utils import setup_logger
+from stabilo_utils import setup_logger
 
 COLOURS = np.random.randint(0, 256, (100, 3))
 

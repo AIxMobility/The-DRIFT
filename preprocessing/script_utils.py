@@ -9,7 +9,7 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 
-from stabilo.utils import detect_delimiter, load_config
+from stabilo_utils import detect_delimiter, load_config
 
 MACOS, LINUX, WINDOWS = (platform.system() == x for x in ['Darwin', 'Linux', 'Windows'])
 
