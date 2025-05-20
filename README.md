@@ -121,6 +121,7 @@ python model/train.py
 ```
 
 ## Visualizations of Traffic Analysis Tools
+
 <table>
   <thead>
     <tr>
@@ -130,29 +131,45 @@ python model/train.py
     </tr>
   </thead>
   <tbody>
+    <!-- Microscopic: Lane Change -->
     <tr>
-      <td rowspan="2"><b>Microscopic</b></td>
+      <td><b>Microscopic</b></td>
       <td>Lane Change (LC)</td>
-      <td><img src="https://github.com/user-attachments/assets/e5146f82-9ab4-4e4c-ac83-30dbcb537e25" width="70%"/></td>
+      <td>
+        <img src="https://github.com/user-attachments/assets/e5146f82-9ab4-4e4c-ac83-30dbcb537e25" width="70%"/>
+      </td>
     </tr>
+    <!-- Microscopic: TTC -->
     <tr>
+      <td><b>Microscopic</b></td>
       <td>Time-to-Collision (TTC)</td>
-      <td><img src="https://github.com/user-attachments/assets/df4c050b-c8ce-43c6-b1f7-04eafd1572f7" width="70%"/></td>
-
+      <td>
+        <img src="https://github.com/user-attachments/assets/df4c050b-c8ce-43c6-b1f7-04eafd1572f7" width="70%"/>
+      </td>
     </tr>
+    <!-- Mesoscopic: Flow-Density -->
     <tr>
-      <td rowspan="2"><b>Mesoscopic</b></td>
-      <td>Flow-Density Diagram </td>
-      <td><img src="https://github.com/user-attachments/assets/473d7545-c73c-4fd1-bc92-e818f64f872f" width="70%"/></td>
+      <td><b>Mesoscopic</b></td>
+      <td>Flow-Density Diagram</td>
+      <td>
+        <img src="https://github.com/user-attachments/assets/473d7545-c73c-4fd1-bc92-e818f64f872f" width="70%"/>
+      </td>
     </tr>
+    <!-- Mesoscopic: Time-Space -->
     <tr>
-      <td>Time-Space Diagram </td>
-      <td><img src="https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe" width="70%"/></td>
+      <td><b>Mesoscopic</b></td>
+      <td>Time-Space Diagram</td>
+      <td>
+        <img src="https://github.com/user-attachments/assets/914bcdd2-2bac-4d34-95f9-9f38852a93fe" width="70%"/>
+      </td>
     </tr>
+    <!-- Macroscopic: Speed Heatmap -->
     <tr>
       <td><b>Macroscopic</b></td>
       <td>Speed Heatmap</td>
-      <td><img src="https://github.com/user-attachments/assets/b08961ca-cf78-428c-9540-7bd173cdf577" width="70%"/></td>
+      <td>
+        <img src="https://github.com/user-attachments/assets/b08961ca-cf78-428c-9540-7bd173cdf577" width="70%"/>
+      </td>
     </tr>
   </tbody>
 </table>
