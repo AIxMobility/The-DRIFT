@@ -9,7 +9,7 @@
 - Enable multi-scale traffic analysis (microscopic, mesoscopic, and macroscopic)
 
 ## Contributions
-- o detect and track vehicle instances in high resolution using polygon-based oriented bounding boxes (OBB) at an **altitude of 250 meters**
+- To detect and track vehicle instances in high resolution using polygon-based oriented bounding boxes (OBB) at an **altitude of 250 meters**
 - To stabilize video data and real-world orthophoto-mapped trajectories
 - To provide **81,699 annotated vehicle trajectories** collected across 2.6 km of urban roadways
 - To offer object detection/tracking model for customization and the built-in tools for lane-change analysis, time-to-collision (TTC), congestion detection, flow-density analysis, and more
