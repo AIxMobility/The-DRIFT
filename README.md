@@ -22,6 +22,29 @@
 - **Trajectory format**: Real-world coordinates with speed, acceleration, and heading  
 - **Model**: YOLOv11m + ByteTrack with polygon-based OBB detection
 
+### Structure of the extracted traffic trajectory data
+
+| Column | Description |
+| :--- | :--- |
+| `track_id` | Unique identifier assigned to each vehicle throughout its trajectory |
+| `frame` | Frame index in the video sequence (30 fps) |
+| `center_x`, `center_y` | Horizontal and vertical positions of the vehicle center, respectively |
+| `width` | Width of the detected vehicle |
+| `height` | Height of the detected vehicle |
+| `angle` | Orientation angle of the vehicle in radians |
+| `x1`, `y1` | Coordinates of the front-left corner of the vehicle |
+| `x2`, `y2` | Coordinates of the front-right corner of the vehicle |
+| `x3`, `y3` | Coordinates of the rear-right corner of the vehicle |
+| `x4`, `y4` | Coordinates of the rear-left corner of the vehicle |
+| `confidence` | Confidence score of the detection result (range: 0 to 1) |
+| `class_id` | Object class label (0: bus, 1: car, 2: truck) |
+| `site` | Identifier of the observation site |
+| `lane` | Lane index where the vehicle is currently located |
+| `preceding_id` | Identifier of the vehicle directly ahead |
+| `following_id` | Identifier of the vehicle directly behind |
+
+> **Note**: Position- and size-related values (e.g., coordinates, width, height) are expressed in pixels.
+
 ## Demos
 - Frame stabilization
 <video src="https://github.com/user-attachments/assets/3468c496-dd18-445f-ab59-324beb871037" controls width="600">
